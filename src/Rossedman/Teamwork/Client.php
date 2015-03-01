@@ -13,6 +13,8 @@ class Client implements Requestable {
 
     protected $url;
 
+    protected $dataFormat = 'json';
+
     /**
      * @param Guzzle $client
      */
@@ -89,18 +91,10 @@ class Client implements Requestable {
     /**
      * Send Request
      */
-    public function send()
+    public function response()
     {
         $this->response = $this->client->send($this->request);
 
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function json()
-    {
         return $this->response->json();
     }
 
@@ -115,7 +109,7 @@ class Client implements Requestable {
             $this->url = $this->url . '/';
         }
 
-        return $this->url . $endpoint;
+        return $this->url . $endpoint . '.' . $this->dataFormat;
     }
 
 }

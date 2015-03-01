@@ -9,12 +9,10 @@ class Factory {
 
     /**
      * @param Requestable $client
-     * @param                    $key
      */
-    public function __construct(Requestable $client, $key)
+    public function __construct(Requestable $client)
     {
         $this->client   = $client;
-        $this->key      = $key;
     }
 
     /**
@@ -33,7 +31,7 @@ class Factory {
             throw new ClassNotCreatedException('Class $class could not be created.');
         }
 
-        return new $class($this->client, $this->key);
+        return new $class($this->client);
     }
 
     /**

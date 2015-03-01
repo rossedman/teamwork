@@ -13,29 +13,4 @@ abstract class Object {
         $this->client = $client;
     }
 
-    public function get()
-    {
-        //..
-    }
-
-    public function post()
-    {
-        //..
-    }
-
-    public function put()
-    {
-        //..
-    }
-
-    public function delete()
-    {
-        //..
-    }
-
-    public function send()
-    {
-
-    }
-
 }
