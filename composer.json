@@ -1,0 +1,27 @@
+{
+    "name": "rossedman/teamwork",
+    "description": "PHP wrapper for the Teamwork API",
+    "keywords": ["teamwork", "api", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ross Edman",
+            "email": "ross.edman@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "~5.2"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1",
+        "phpunit/phpunit": "~4.5",
+        "mockery/mockery": "0.9.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "\\Rossedman\\Teamwork\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}
