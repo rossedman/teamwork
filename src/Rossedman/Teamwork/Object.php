@@ -6,6 +6,8 @@ abstract class Object {
 
     protected $client;
 
+    protected $request;
+
     public function __construct(Requestable $client)
     {
         $this->client = $client;
@@ -29,6 +31,11 @@ abstract class Object {
     public function delete()
     {
         //..
+    }
+
+    public function send()
+    {
+
     }
 
 }

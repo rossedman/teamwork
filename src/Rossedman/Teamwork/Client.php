@@ -1,4 +1,4 @@
-<?php  namespace Rossedman\Teamwork; 
+<?php  namespace Rossedman\Teamwork;
 
 use GuzzleHttp\Client as Guzzle;
 use Rossedman\Teamwork\Contracts\Requestable;
@@ -7,9 +7,115 @@ class Client implements Requestable {
 
     protected $client;
 
-    public function __construct(Guzzle $client)
+    protected $request;
+
+    protected $key;
+
+    protected $url;
+
+    /**
+     * @param Guzzle $client
+     */
+    public function __construct(Guzzle $client, $key, $url)
     {
         $this->client = $client;
+        $this->key = $key;
+        $this->url = $url;
+    }
+
+    /**
+     * @param $endpoint
+     *
+     * @return Client
+     */
+    public function get($endpoint)
+    {
+        $this->buildRequest($endpoint, 'GET');
+
+        return $this;
+    }
+
+    /**
+     * @param $endpoint
+     * @param $data
+     *
+     * @return Client
+     */
+    public function post($endpoint, $data)
+    {
+        return $this->buildRequest($endpoint, 'POST', ['body' => $data]);
+    }
+
+    /**
+     * @param $endpoint
+     * @param $data
+     *
+     * @return Client
+     */
+    public function put($endpoint, $data)
+    {
+        return $this->buildRequest($endpoint, 'PUT', ['body' => $data]);
+    }
+
+    /**
+     * @param $endpoint
+     *
+     * @return Client
+     * @internal param $data
+     *
+     */
+    public function delete($endpoint)
+    {
+        return $this->buildRequest($endpoint, 'DELETE');
+    }
+
+    /**
+     * @param       $endpoint
+     *
+     * @param       $action
+     * @param array $params
+     *
+     * @return $this
+     */
+    public function buildRequest($endpoint, $action, $params = [])
+    {
+        $this->request = $this->client->createRequest($action,
+            $this->buildUrl($endpoint), ['auth' => [$this->key, 'X'], $params]
+        );
+
+        return $this;
+    }
+
+    /**
+     * Send Request
+     */
+    public function send()
+    {
+        $this->response = $this->client->send($this->request);
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function json()
+    {
+        return $this->response->json();
+    }
+
+    /**
+     * @param $endpoint
+     *
+     * @return string
+     */
+    public function buildUrl($endpoint)
+    {
+        if(substr($this->url, -1) != '/') {
+            $this->url = $this->url . '/';
+        }
+
+        return $this->url . $endpoint;
     }
 
 }
