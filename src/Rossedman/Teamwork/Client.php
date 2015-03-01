@@ -45,7 +45,7 @@ class Client implements Requestable {
      */
     public function post($endpoint, $data)
     {
-        return $this->buildRequest($endpoint, 'POST', ['body' => $data]);
+        return $this->buildRequest($endpoint, 'POST', $data);
     }
 
     /**
@@ -56,7 +56,7 @@ class Client implements Requestable {
      */
     public function put($endpoint, $data)
     {
-        return $this->buildRequest($endpoint, 'PUT', ['body' => $data]);
+        return $this->buildRequest($endpoint, 'PUT', $data);
     }
 
     /**
@@ -81,11 +81,13 @@ class Client implements Requestable {
      */
     public function buildRequest($endpoint, $action, $params = [], $query = null)
     {
+        if (count($params) > 0) $params = json_encode($params);
+
         $this->request = $this->client->createRequest($action,
-            $this->buildUrl($endpoint), ['auth' => [$this->key, 'X'], $params]
+            $this->buildUrl($endpoint), ['auth' => [$this->key, 'X'], 'body' => $params]
         );
 
-        if($query != null) $this->buildQuery($query);
+        if ($query != null) $this->buildQuery($query);
 
         return $this;
     }
@@ -107,7 +109,8 @@ class Client implements Requestable {
      */
     public function buildUrl($endpoint)
     {
-        if(substr($this->url, -1) != '/') {
+        if (substr($this->url, -1) != '/')
+        {
             $this->url = $this->url . '/';
         }
 
@@ -122,6 +125,7 @@ class Client implements Requestable {
     public function buildQuery($query)
     {
         $q = $this->request->getQuery();
+
         foreach ($query as $key => $value)
         {
             $q[$key] = $value;
