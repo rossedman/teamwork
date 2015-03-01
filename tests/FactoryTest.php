@@ -12,7 +12,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
 
     public function test_that_it_returns_new_objects()
     {
-        $factory = new Factory($guzzle = m::mock('GuzzleHttp\Client'), 'api_key');
+        $factory = new Factory($guzzle = m::mock('Rossedman\Teamwork\Contracts\Requestable'), 'api_key');
 
         $this->assertInstanceOf('Rossedman\Teamwork\Account', $factory->account());
         $this->assertInstanceOf('Rossedman\Teamwork\Activity', $factory->activity());
@@ -33,7 +33,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
      */
     public function test_that_it_fails_when_object_does_not_exist()
     {
-        $factory = new Factory($guzzle = m::mock('GuzzleHttp\Client'), 'api_key');
+        $factory = new Factory($guzzle = m::mock('Rossedman\Teamwork\Contracts\Requestable'), 'api_key');
 
         $factory->butts();
     }

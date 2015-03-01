@@ -1,28 +1,19 @@
 <?php namespace Rossedman\Teamwork;
 
+use Rossedman\Teamwork\Contracts\Requestable;
 use Rossedman\Teamwork\Exceptions\ClassNotCreatedException;
-
-use GuzzleHttp\Client as Guzzle;
 
 class Factory {
 
-    /**
-     * @var Guzzle
-     */
-    protected $guzzle;
+    protected $client;
 
     /**
-     * @var
+     * @param Requestable $client
+     * @param                    $key
      */
-    protected $request;
-
-    /**
-     * @param Guzzle $guzzle
-     * @param        $key
-     */
-    public function __construct(Guzzle $guzzle, $key)
+    public function __construct(Requestable $client, $key)
     {
-        $this->guzzle   = $guzzle;
+        $this->client   = $client;
         $this->key      = $key;
     }
 
@@ -42,7 +33,7 @@ class Factory {
             throw new ClassNotCreatedException('Class $class could not be created.');
         }
 
-        return new $class($this->guzzle, $this->key);
+        return new $class($this->client, $this->key);
     }
 
     /**
