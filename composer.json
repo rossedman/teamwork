@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-0": {
-            "\\Rossedman\\Teamwork\\": "src"
+            "Rossedman\\Teamwork\\": "src"
         }
     },
     "minimum-stability": "stable"
