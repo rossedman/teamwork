@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Links {
+class Links extends Object {
 
 }

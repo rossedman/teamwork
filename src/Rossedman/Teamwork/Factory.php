@@ -31,7 +31,10 @@ class Factory {
             throw new ClassNotCreatedException('Class $class could not be created.');
         }
 
-        return new $class($this->client);
+        // TODO write parameters checks and parse
+        // TODO eventually parse to search by name?
+
+        return new $class($this->client, $parameters[0]);
     }
 
     /**

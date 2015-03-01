@@ -2,6 +2,10 @@
 
 class Company extends Object {
 
+    protected $wrapper = 'company';
+
+    protected $endpoint = 'companies';
+
     /**
      * Get All Companies
      * GET /companies.json
@@ -12,24 +16,20 @@ class Company extends Object {
      */
     public function all()
     {
-        return $this->client->get('companies')->response();
+        return $this->client->get($this->endpoint)->response();
     }
 
     /**
      * Find Company
      * GET /companies/{company_id}.json
      *
-     * @param $id
-     *
      * @link http://developer.teamwork.com/companies#retrieve_a_single
      *
      * @return mixed
      */
-    public function find($id)
+    public function find()
     {
-        $this->isValidId($id);
-
-        return $this->client->get("companies/$id")->response();
+        return $this->client->get("$this->endpoint/$this->id")->response();
     }
 
     /**
@@ -44,7 +44,7 @@ class Company extends Object {
      */
     public function create($data)
     {
-        return $this->client->post("companies", ['company' => $data])->response();
+        return $this->client->post("$this->endpoint", [$this->wrapper => $data])->response();
     }
 
     /**
@@ -53,27 +53,44 @@ class Company extends Object {
      *
      * @link http://developer.teamwork.com/companies#update_company
      *
-     * @param $id
      * @param $data
      *
      * @return mixed
      */
-    public function update($id, $data)
+    public function update($data)
     {
-        return $this->client->put("companies/$id", ['company' => $data])->response();
+        return $this->client->put("$this->endpoint/$this->id", [$this->wrapper => $data])->response();
     }
 
     /**
      * Delete A Company
      * DELETE /companies/{company_id}.json
      *
-     * @param $id
+     * @return mixed
+     */
+    public function delete()
+    {
+        return $this->client->delete("$this->endpoint/$this->id")->response();
+    }
+
+    /**
+     * Get People Associated With Company
+     * GET /companies/{company_id}/people.json
+     *
+     * @link http://developer.teamwork.com/people#get_people_(withi
      *
      * @return mixed
      */
-    public function delete($id)
+    public function people()
     {
-        return $this->client->delete("companies/$id")->response();
+        return $this->client->get("$this->endpoint/$this->id/people")->response();
     }
-    
+
+//    public function people()
+//    {
+//        $people = new People($this->client);
+//        $people->slug = "/companies/" . $this->id . "/people";
+//
+//        return $people;
+//    }
 }

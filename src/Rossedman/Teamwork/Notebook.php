@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Notebook {
+class Notebook extends Object {
 
 }

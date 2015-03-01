@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Category extends Object {
+class Project extends Object {
 
 }

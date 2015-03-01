@@ -8,12 +8,15 @@ abstract class Object {
 
     protected $request;
 
+    protected $id;
+
     /**
      * @param Requestable $client
      */
-    public function __construct(Requestable $client)
+    public function __construct(Requestable $client, $id = null)
     {
         $this->client = $client;
+        $this->id     = $id;
     }
 
     /**

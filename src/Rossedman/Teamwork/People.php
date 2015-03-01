@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class People {
+class People extends Object {
 
 }

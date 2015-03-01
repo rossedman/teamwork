@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Comment {
+class Comment extends Object {
 
 }

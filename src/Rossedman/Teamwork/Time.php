@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Time {
+class Time extends Object {
 
 }

@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Message {
+class Message extends Object {
 
 }

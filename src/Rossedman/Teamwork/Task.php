@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Task {
+class Task extends Object {
 
 }
