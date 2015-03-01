@@ -30,9 +30,9 @@ class Client implements Requestable {
      *
      * @return Client
      */
-    public function get($endpoint)
+    public function get($endpoint, $query = null)
     {
-        $this->buildRequest($endpoint, 'GET');
+        $this->buildRequest($endpoint, 'GET', [], $query);
 
         return $this;
     }
@@ -79,11 +79,13 @@ class Client implements Requestable {
      *
      * @return $this
      */
-    public function buildRequest($endpoint, $action, $params = [])
+    public function buildRequest($endpoint, $action, $params = [], $query = null)
     {
         $this->request = $this->client->createRequest($action,
             $this->buildUrl($endpoint), ['auth' => [$this->key, 'X'], $params]
         );
+
+        if($query != null) $this->buildQuery($query);
 
         return $this;
     }
@@ -112,4 +114,17 @@ class Client implements Requestable {
         return $this->url . $endpoint . '.' . $this->dataFormat;
     }
 
+    /**
+     * Build Query String
+     *
+     * @param $query
+     */
+    public function buildQuery($query)
+    {
+        $q = $this->request->getQuery();
+        foreach ($query as $key => $value)
+        {
+            $q[$key] = $value;
+        }
+    }
 }
