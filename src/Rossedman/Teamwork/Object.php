@@ -8,33 +8,45 @@ abstract class Object {
 
     protected $request;
 
+    /**
+     * @param Requestable $client
+     */
     public function __construct(Requestable $client)
     {
         $this->client = $client;
     }
 
     /**
-     * Are Argument Valid
+     * Are Arguments Valid
      *
      * @param array $args
      * @param array $accepted
      *
      * @return bool
      */
-    protected function areArgumentsValid(array $args, array $accepted)
+    protected function areArgumentsValid($args, array $accepted)
     {
-        if ($args != null)
-        {
-            foreach ($accepted as $accept)
-            {
-                if (array_key_exists($accept, $args))
-                {
-                    return true;
-                }
-            }
+        if ($args == null) return;
 
-            throw new \InvalidArgumentException('This call only accepts these arguments: ' . implode(" | ",$accepted));
+        foreach ($accepted as $accept)
+        {
+            if (array_key_exists($accept, $args)) return true;
         }
+
+        throw new \InvalidArgumentException('This call only accepts these arguments: ' . implode(" | ",$accepted));
     }
 
+    /**
+     * Is Valid ID
+     *
+     * @param $id
+     *
+     * @return bool
+     */
+    protected function isValidId($id)
+    {
+        if( ! is_int($id)) throw new \InvalidArgumentException('This is not a valid ID. IDs must be integers');
+
+        return true;
+    }
 }
