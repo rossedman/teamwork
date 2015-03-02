@@ -35,8 +35,8 @@ If you are using Laravel then add a `teamwork` array to your `config/services.ph
 ```php
 ...
 'teamwork' => [
-    'key' => 'YourSecretKey',
-    'url  => 'YourTeamworkUrl'
+    'key'  => 'YourSecretKey',
+    'url'  => 'YourTeamworkUrl'
 ],
 ```
 
