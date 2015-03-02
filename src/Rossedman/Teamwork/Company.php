@@ -86,11 +86,4 @@ class Company extends Object {
         return $this->client->get("$this->endpoint/$this->id/people")->response();
     }
 
-//    public function people()
-//    {
-//        $people = new People($this->client);
-//        $people->slug = "/companies/" . $this->id . "/people";
-//
-//        return $people;
-//    }
 }

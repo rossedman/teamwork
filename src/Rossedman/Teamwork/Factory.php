@@ -32,9 +32,10 @@ class Factory {
         }
 
         // TODO write parameters checks and parse
-        // TODO eventually parse to search by name?
+        // TODO eventually parse to search by name
+        // TODO $parameters[0] breaks methods without parameters
 
-        return new $class($this->client, $parameters);
+        return new $class($this->client, $parameters[0]);
     }
 
     /**
