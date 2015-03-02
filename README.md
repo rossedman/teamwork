@@ -30,7 +30,7 @@ and then add the facade to your `aliases` array
 
 ### Configuration
 
-If you are using Laravel then add `teamwork` to your `app/services.php` file
+If you are using Laravel then add a `teamwork` array to your `config/services.php` file
 
 ```php
 ...
