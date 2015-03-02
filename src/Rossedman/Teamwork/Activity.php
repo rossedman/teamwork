@@ -31,8 +31,6 @@ class Activity extends Object {
      */
     public function delete($id)
     {
-        $this->isValidId($id);
-
         return $this->client->delete("activity/$id")->response();
     }
 

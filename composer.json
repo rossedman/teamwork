@@ -23,5 +23,8 @@
             "Rossedman\\Teamwork\\": "src"
         }
     },
+    "suggest": {
+        "illuminate/support": "Required for Laravel support"
+    },
     "minimum-stability": "stable"
 }

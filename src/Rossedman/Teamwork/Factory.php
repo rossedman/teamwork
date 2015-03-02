@@ -34,7 +34,7 @@ class Factory {
         // TODO write parameters checks and parse
         // TODO eventually parse to search by name?
 
-        return new $class($this->client, $parameters[0]);
+        return new $class($this->client, $parameters);
     }
 
     /**

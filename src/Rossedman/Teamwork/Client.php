@@ -131,4 +131,12 @@ class Client implements Requestable {
             $q[$key] = $value;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
 }

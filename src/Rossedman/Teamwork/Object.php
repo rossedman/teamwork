@@ -39,17 +39,4 @@ abstract class Object {
         throw new \InvalidArgumentException('This call only accepts these arguments: ' . implode(" | ",$accepted));
     }
 
-    /**
-     * Is Valid ID
-     *
-     * @param $id
-     *
-     * @return bool
-     */
-    protected function isValidId($id)
-    {
-        if( ! is_int($id)) throw new \InvalidArgumentException('This is not a valid ID. IDs must be integers');
-
-        return true;
-    }
 }

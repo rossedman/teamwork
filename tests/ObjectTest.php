@@ -4,6 +4,15 @@ use Mockery as m;
 
 class ObjectTest extends PHPUnit_Framework_TestCase {
 
+    protected $object;
+
+    public function setUp()
+    {
+        parent::setup();
+        $request = m::mock('Rossedman\Teamwork\Contracts\Requestable');
+        $this->object = new ObjectStub($request);
+    }
+
     public function tearDown()
     {
         m::close();
@@ -11,12 +20,42 @@ class ObjectTest extends PHPUnit_Framework_TestCase {
 
     public function test_it_has_client_injected()
     {
-        $object = new ObjectStub($client = m::mock('Rossedman\Teamwork\Contracts\Requestable'));
-        $this->assertObjectHasAttribute('client', $object);
+        $this->assertObjectHasAttribute('client', $this->object);
+    }
+
+    public function test_if_arguments_are_valid()
+    {
+        $args = ['testArg' => 2, 'testArg2' => 3];
+        $accepted = ['testArg', 'testArg2'];
+
+        $return = $this->object->valid_args($args, $accepted);
+
+        $this->assertTrue($return);
+    }
+
+    public function test_if_arguments_are_null()
+    {
+        $return = $this->object->valid_args(null, []);
+
+        $this->assertNull($return);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage This call only accepts these arguments: testArg | testArg2
+     */
+    public function test_if_arguments_do_not_match_exception_is_thrown()
+    {
+        $this->object->valid_args(['whatever' => 1], ['testArg', 'testArg2']);
     }
 
 }
 
 class ObjectStub extends \Rossedman\Teamwork\Object {
+
+    public function valid_args($args, $accepted)
+    {
+        return $this->areArgumentsValid($args, $accepted);
+    }
 
 }
