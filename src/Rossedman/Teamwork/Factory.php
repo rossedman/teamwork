@@ -31,11 +31,15 @@ class Factory {
             throw new ClassNotCreatedException('Class $class could not be created.');
         }
 
-        // TODO write parameters checks and parse
-        // TODO eventually parse to search by name
-        // TODO $parameters[0] breaks methods without parameters
+        // only accepts id
+        if($parameters != null)
+        {
+            if(!is_int($parameters[0])) throw new \InvalidArgumentException('This is not a valid ID');
 
-        return new $class($this->client, $parameters[0]);
+            return new $class($this->client, $parameters[0]);
+        }
+
+        return new $class($this->client);
     }
 
     /**

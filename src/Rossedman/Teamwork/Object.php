@@ -20,6 +20,14 @@ abstract class Object {
     }
 
     /**
+     * @return null
+     */
+    public function getID()
+    {
+        return $this->id;
+    }
+
+    /**
      * Are Arguments Valid
      *
      * @param array $args

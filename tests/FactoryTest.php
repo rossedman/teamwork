@@ -37,4 +37,22 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
 
         $factory->butts();
     }
+
+    public function test_that_it_parses_parameters()
+    {
+        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
+        $activity = $factory->activity(30);
+
+        $this->assertObjectHasAttribute('id', $activity);
+        $this->assertEquals(30, $activity->getID());
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function test_that_it_only_accepts_id_as_parameter()
+    {
+        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
+        $factory->activity('butts');
+    }
 }

@@ -2,4 +2,10 @@
 
 class Task extends Object {
 
+    use RestfulTrait;
+
+    public function complete(){}
+
+    public function uncomplete(){}
+
 }
