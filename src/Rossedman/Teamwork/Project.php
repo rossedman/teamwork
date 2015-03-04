@@ -1,10 +1,14 @@
-<?php  namespace Rossedman\Teamwork; 
+<?php  namespace Rossedman\Teamwork;
+
+use Rossedman\Teamwork\Traits\TimeTrait;
+use Rossedman\Teamwork\Traits\RestfulTrait;
 
 class Project extends Object {
 
-    use RestfulTrait;
+    use RestfulTrait, TimeTrait;
 
-    protected $wrapper = 'project';
+    protected $wrapper  = 'project';
+
     protected $endpoint = 'projects';
 
     /**
@@ -51,4 +55,14 @@ class Project extends Object {
         return $this->client->get("$this->endpoint/$this->id/links")->response();
     }
 
+    /**
+     * Time Totals
+     * GET /projects/{id}/time/total.json
+     *
+     * @return mixed
+     */
+    public function timeTotal()
+    {
+        return $this->client->get("$this->endpoint/$this->id/time/total")->response();
+    }
 }

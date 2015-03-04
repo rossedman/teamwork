@@ -1,4 +1,4 @@
-<?php  namespace Rossedman\Teamwork; 
+<?php  namespace Rossedman\Teamwork;
 
 use Rossedman\Teamwork\RestfulTrait;
 
@@ -6,7 +6,8 @@ class Company extends Object {
 
     use RestfulTrait;
 
-    protected $wrapper = 'company';
+    protected $wrapper  = 'company';
+
     protected $endpoint = 'companies';
 
     /**
@@ -21,5 +22,4 @@ class Company extends Object {
     {
         return $this->client->get("$this->endpoint/$this->id/people")->response();
     }
-
 }
