@@ -1,19 +1,10 @@
 <?php  namespace Rossedman\Teamwork; 
 
-use Rossedman\Teamwork\Traits\TimeTrait;
-use Rossedman\Teamwork\Traits\RestfulTrait;
+class Tasklist extends Object {
 
-class Task extends Object {
+    protected $wrapper  = 'tasklist';
 
-    use RestfulTrait, TimeTrait;
-
-    public function complete(){
-
-    }
-
-    public function uncomplete(){
-
-    }
+    protected $endpoint = 'tasklists';
 
     /**
      * Time Totals
