@@ -116,9 +116,9 @@ class Client implements Requestable {
      * and string queries if necessary. This is where the bulk
      * of the data is build up to connect to Teamwork with.
      *
-     * @param       $endpoint
-     * @param       $action
-     * @param array $params
+     * @param        $endpoint
+     * @param string $action
+     * @param array  $params
      *
      * @return $this
      */
@@ -169,10 +169,10 @@ class Client implements Requestable {
     {
         if (substr($this->url, -1) != '/')
         {
-            $this->url = $this->url . '/';
+            $this->url = $this->url.'/';
         }
 
-        return $this->url . $endpoint . '.' . $this->dataFormat;
+        return $this->url.$endpoint.'.'.$this->dataFormat;
     }
 
     /**

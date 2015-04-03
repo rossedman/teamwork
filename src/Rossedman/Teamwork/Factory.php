@@ -12,7 +12,7 @@ class Factory {
      */
     public function __construct(Requestable $client)
     {
-        $this->client   = $client;
+        $this->client = $client;
     }
 
     /**
@@ -24,17 +24,19 @@ class Factory {
      */
     public function __call($method, $parameters)
     {
-        $class = $this->getNamespace() . '\\' . strtoupper($method);
+        $class = $this->getNamespace().'\\'.strtoupper($method);
 
-        if( ! class_exists($class))
+        if ( ! class_exists($class))
         {
             throw new ClassNotCreatedException('Class $class could not be created.');
         }
 
         // only accepts id
-        if($parameters != null)
+        if ($parameters != null)
         {
-            if(!is_int($parameters[0])) throw new \InvalidArgumentException('This is not a valid ID');
+            if ( ! is_int($parameters[0])) {
+                throw new \InvalidArgumentException('This is not a valid ID');
+            }
 
             return new $class($this->client, $parameters[0]);
         }

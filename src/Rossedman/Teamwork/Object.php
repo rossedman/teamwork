@@ -31,20 +31,24 @@ abstract class Object {
      * Are Arguments Valid
      *
      * @param array $args
-     * @param array $accepted
+     * @param string[] $accepted
      *
-     * @return bool
+     * @return null|bool
      */
     protected function areArgumentsValid($args, array $accepted)
     {
-        if ($args == null) return;
+        if ($args == null) {
+            return;
+        }
 
         foreach ($accepted as $accept)
         {
-            if (array_key_exists($accept, $args)) return true;
+            if (array_key_exists($accept, $args)) {
+                return true;
+            }
         }
 
-        throw new \InvalidArgumentException('This call only accepts these arguments: ' . implode(" | ",$accepted));
+        throw new \InvalidArgumentException('This call only accepts these arguments: '.implode(" | ",$accepted));
     }
 
 }

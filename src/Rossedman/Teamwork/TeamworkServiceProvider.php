@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class TeamworkServiceProvider extends ServiceProvider  {
+class TeamworkServiceProvider extends ServiceProvider {
 
     /**
      * Register the service provider.
