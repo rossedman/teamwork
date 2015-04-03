@@ -24,20 +24,12 @@ class Factory {
      */
     public function __call($method, $parameters)
     {
-        $class = $this->getNamespace().'\\'.strtoupper($method);
+        $class = $this->getQualifiedName($method);
 
-        if ( ! class_exists($class))
+        $this->doesClassExist($class);
+
+        if($this->paramIsId($parameters) == true)
         {
-            throw new ClassNotCreatedException("Class $class could not be created.");
-        }
-
-        // only accepts id
-        if ($parameters != null)
-        {
-            if ( ! is_int($parameters[0])) {
-                throw new \InvalidArgumentException("This is not a valid ID");
-            }
-
             return new $class($this->client, $parameters[0]);
         }
 
@@ -56,4 +48,53 @@ class Factory {
         return $reflection->getNamespaceName();
     }
 
+    /**
+     * Get Fully Qualified Name
+     *
+     * build and return fully qualified name
+     * for class to instantiate
+     *
+     * @param $method
+     *
+     * @return string
+     */
+    protected function getQualifiedName($method)
+    {
+        return $this->getNamespace() . '\\' . strtoupper($method);
+    }
+
+    /**
+     * Parameter Has ID
+     *
+     * is there a parameter being passed in, and is it
+     * an integer?
+     *
+     * @param $parameters
+     *
+     * @return bool
+     */
+    protected function paramIsId($parameters)
+    {
+        if($parameters == null) return null;
+
+        if ( ! is_int($parameters[0]))
+        {
+            throw new \InvalidArgumentException("This is not a valid ID");
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $class
+     *
+     * @throws ClassNotCreatedException
+     */
+    protected function doesClassExist($class)
+    {
+        if ( ! class_exists($class))
+        {
+            throw new ClassNotCreatedException("Class $class could not be created.");
+        }
+    }
 }
