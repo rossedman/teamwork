@@ -1,5 +1,6 @@
 <?php namespace Rossedman\Teamwork;
 
+use GuzzleHttp\Client as Guzzle;
 use Illuminate\Support\ServiceProvider;
 
 class TeamworkServiceProvider extends ServiceProvider {
