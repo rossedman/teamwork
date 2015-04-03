@@ -25,13 +25,11 @@ class Activity extends Object {
      *
      * @link http://developer.teamwork.com/activity#delete_an_activit
      *
-     * @param $id
-     *
      * @return mixed
      */
-    public function delete($id)
+    public function delete()
     {
-        return $this->client->delete("activity/$id")->response();
+        return $this->client->delete("activity/$this->id")->response();
     }
 
 }

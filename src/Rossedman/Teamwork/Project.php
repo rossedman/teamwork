@@ -132,15 +132,4 @@ class Project extends Object {
         return $this->client->get("$this->endpoint/$this->id/milestones")->response();
     }
 
-    /**
-     * Links
-     * GET /projects/{project_id}/links.json
-     *
-     * @return mixed
-     */
-    public function links()
-    {
-        return $this->client->get("$this->endpoint/$this->id/links")->response();
-    }
-
 }
