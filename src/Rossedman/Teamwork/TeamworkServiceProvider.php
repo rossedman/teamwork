@@ -22,7 +22,7 @@ class TeamworkServiceProvider extends ServiceProvider {
             return new \Rossedman\Teamwork\Factory($client);
         });
 
-        $this->app->bind('Rossedman\Teamwork', 'rossedman.teamwork');
+        $this->app->bind('Rossedman\Teamwork\Factory', 'rossedman.teamwork');
     }
 
 }
