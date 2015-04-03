@@ -49,9 +49,9 @@ class Client implements RequestableInterface {
     protected $dataFormat = 'json';
 
     /**
-     * @param GuzzleHttp\Client $client
-     * @param                   $key
-     * @param                   $url
+     * @param Guzzle $client
+     * @param        $key
+     * @param        $url
      */
     public function __construct(Guzzle $client, $key, $url)
     {

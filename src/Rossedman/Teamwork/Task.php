@@ -7,6 +7,10 @@ class Task extends AbstractObject {
 
     use RestfulTrait, TimeTrait;
 
+    protected $wrapper  = 'task';
+
+    protected $endpoint = 'tasks';
+
     /**
      * Time Totals
      * GET /projects/{id}/time/total.json
