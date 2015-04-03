@@ -20,6 +20,7 @@ This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwo
     * [Company](https://github.com/rossedman/teamwork#company)
     * [People](https://github.com/rossedman/teamwork#people)
     * [Milestone](https://github.com/rossedman/teamwork#milestone)
+    * [Task](https://github.com/rossedman/teamwork#task)
     * [Project](https://github.com/rossedman/teamwork#project)
 3. [Roadmap](https://github.com/rossedman/teamwork#roadmap)
 4. [Contributing](https://github.com/rossedman/teamwork#contributing)
@@ -89,37 +90,54 @@ Not all of the Teamwork API is supported yet but there is still a lot you can do
 
 #### Account
 
-```php
-// get account details
-$teamwork->account()->details();
+Get details of the account.
 
-// authenticate
+```php
+$teamwork->account()->details();
+```
+
+Authenticate the account.
+
+```php
 $teamwork->account()->authenticate();
 ```
 
 #### Activity
 
+Get the latest activity for all of Teamwork
 ```php
-// get latest activity
 $teamwork->activity()->latest(['maxItems' => 10]);
+```
 
-// only get starred activity
+Get only starred activity by the account your are using.
+
+```php
 $teamwork->activity()->latest(['onlyStarred' => 1]);
+```
 
-// delete activity
+Delete a specific activity by ID
+
+```php
 $teamwork->activity($id)->delete();
 ```
 
 #### Company
 
+Retrieve all companies.
+
 ```php
-// view all companies
 $teamwork->company()->all();
+```
 
-// find a company
+Retrieve company by ID.
+
+```php
 $teamwork->company($id)->find();
+```
 
-// create a company
+Create a company! Aha! Business! :briefcase:
+
+```php
 $teamwork->company()->create([
     "name" => "Satan Inc.",
     "address_one" => "666 Deathzone Rd.",
@@ -128,32 +146,51 @@ $teamwork->company()->create([
     "state" => "Hellworld",
     "countrycode" => "US"
 ]);
+```
 
-// update a company
+Update a company
+
+```php
 $teamwork->company($id)->update([
     "name" => "Clients From Hell"
 ]);
+```
 
-// delete a company
+Delete a company
+
+```php
 $teamwork->company($id)->delete();
+```
 
-// people associated with comapny
+Get people associated with company
+
+```php
 $teamwork->company($id)->people();
 ```
 
 #### People
 
+Gather all the peoples.
+
 ```php
-// gather all the peoples
 $teamwork->people()->all();
+```
 
-// paginate people
+Paginate people.
+
+```php
 $teamwork->people()->all(['page' => "3", "pageSize" => "10"]);
+```
 
-// get by email address
+Get a person by email address
+
+```php
 $teamwork->people()->all(['emailaddress' => 'test@awesome.com']);
+```
 
-// create a person
+Create a person.
+
+```php
 $teamwork->people()->create([
     "first-name" => "Warlock",
     "last-name" => "Mastermind",
@@ -161,19 +198,31 @@ $teamwork->people()->create([
     "user-type" => "account",
     ...
 ]);
+```
 
-// update a person
+Update a person
+
+```php
 $teamwork->people($id)->update([
     "first-name" => "Nero"
 ]);
+```
 
-// delete a person
+Delete a person
+
+```php
 $teamwork->people($id)->delete();
+```
 
-// me, who am I?
+Find out who you are. Search yourself. :gem:
+
+```php
 $teamwork->people()->me();
+```
 
-// get all apiKeys, for site administrator only
+Get all API Keys **For site admin only** :key:
+
+```php
 $teamwork->people()->apiKeys();
 ```
 
@@ -181,23 +230,31 @@ $teamwork->people()->apiKeys();
 
 Get all tasks.
 
-    $teamwork->task()->all();
+```php
+$teamwork->task()->all();
+```
 
 You can also filter tasks by many different parameters that are listed [here](http://developer.teamwork.com/todolistitems#retrieve_all_task) in the Teamwork developers docs. This example shows how to filter by tasks that are overdue and then order them by date.
 
-    $teamwork->task()->all(['filter' => 'overdue', 'sort' => 'duedate']);
+```php
+$teamwork->task()->all(['filter' => 'overdue', 'sort' => 'duedate']);
+```
 
 Retrieve a task by `id`.
 
-    $teamwork->task($id)->find();
+```php
+$teamwork->task($id)->find();
+```
 
 Retrieve a task by `id` and exclude files and subtasks.
 
-    $teamwork->task($id)->find(['getFiles' => 'false', 'nestSubTasks' => 'true]);
+```php
+$teamwork->task($id)->find(['getFiles' => 'false', 'nestSubTasks' => 'true]);
+```
 
 Complete and uncomplete a task.
 
-```
+```php
 $teamwork->task(1691080)->complete();
 $teamwork->task(1691080)->uncomplete();
 ```
@@ -206,73 +263,118 @@ $teamwork->task(1691080)->uncomplete();
 
 Get all milestones in Teamwork.
 
-    $teamwork->milestone()->all();
+```php
+$teamwork->milestone()->all();
+```
 
 Get all milestones and get progress of each milestone.
 
-    $teamwork->milestone()->all(['getProgress' => 'true']);
+```php
+$teamwork->milestone()->all(['getProgress' => 'true']);
+```
 
 Find a specific milestone by `id`;
 
-    $teamwork->milestone($id)->find();
+```php
+$teamwork->milestone($id)->find();
+```
 
 Find milestone by ID with tasks, task lists and progress.
 
-    $teamwork->milestone($id)->find([
-        'getProgress' => 'true',
-        'showTaskLists' => 'true',
-        'showTasks' => 'true'
-    ]);
+```php
+$teamwork->milestone($id)->find([
+   'getProgress' => 'true',
+   'showTaskLists' => 'true',
+   'showTasks' => 'true'
+]);
+```
 
 #### Projects
 
 Projects have the most associated with them and are the most complicated to use. Below are all the methods associated with the `Projects` class.
 
+Get all projects in Teamwork.
+
 ```php
-// get all projects
 $teamwork->project()->all();
+```
 
-// find a project by ID
+Find a specific project by ID.
+
+```php
 $teamwork->project($projectID)->find();
+```
 
-// update a project
+Update a project.
+
+```php
 $teamwork->project($projectID)->update([
     "name" => "Satan, The Project",
     "description" => "Updating this project to be most evil",
     "companyID" => "666"
 ]);
+```
 
-// remove a project
+Delete a project.
+
+```php
 $teamwork->project($projectID)->delete();
+```
 
-// latest activity on project
+Get the latest activity on a project.
+
+```php
 $teamwork->project($projectID)->activity();
 $teamwork->project($projectID)->activity(['maxItems' => 5]);
+```
 
-// companies involved in project
+Get all companies involved in a project.
+
+```php
 $teamwork->project($projectID)->companies();
+```
 
-// people included in project
+Get all people associated with a project.
+
+```php
 $teamwork->project($projectID)->people();
+```
 
-// starred projects
+Get starred projects :star2:
+
+```php
 $teamwork->project()->starred();
+```
 
-// star/unstar a project
+Star or unstar a project :star2:
+
+```php
 $teamwork->project($projectID)->star();
 $teamwork->project($projectID)->unstar();
+```
 
-// get all projects links
+Get all links on project
+
+```php
 $teamwork->project($projectID)->links();
+```
 
-// time total
+Get the time totals for a project.
+
+```php
 $teamwork->project($projectID)->timeTotal();
+```
 
-// messages
+Retrieve latest messages and archived messages
+
+```php
 $teamwork->project($projectID)->latestMessages();
 $teamwork->project($projectID)->archivedMessages();
+```
 
-// get all milestones
+Get all the milestones
+
+```php
 $teamwork->project($projectID)->milestones();
 ```
 
@@ -294,7 +396,7 @@ $teamwork->project($projectID)->milestones();
 - [ ] Add Support For `Tasks` Endpoint
 - [ ] Add Support For `Tasks Lists` Endpoint
 - [ ] Add Support For `Time` Endpoint
-- [ ] Create Testing Suite
+- [x] Create Testing Suite
 
 #### 1.1 Release
 
