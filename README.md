@@ -1,5 +1,24 @@
 # Teamwork API PHP Wrapper
 
+1. [Installation](https://github.com/rossedman/teamwork#installation)
+    * [Laravel Setup](https://github.com/rossedman/teamwork#laravel-setup)
+    * [Without Laravel](https://github.com/rossedman/teamwork#configuration-without-laravel)
+2. About
+    * Dependencies
+    * Client
+    * Traits
+3. [Examples](https://github.com/rossedman/teamwork#examples)
+    * [Account](https://github.com/rossedman/teamwork#account)
+    * [Activity](https://github.com/rossedman/teamwork#activity)
+    * [Company]((https://github.com/rossedman/teamwork#company)
+    * [People]((https://github.com/rossedman/teamwork#people)
+    * [Project]((https://github.com/rossedman/teamwork#project)
+4. Roadmap
+5. Contributing
+6. License
+
+* * *
+
 ## Installation
 
 Just add this to your `composer.json` and then run `composer update`.
@@ -7,8 +26,6 @@ Just add this to your `composer.json` and then run `composer update`.
 ```
 "rossedman/teamwork": "dev-master"
 ```
-
-* * *
 
 ## Laravel Setup
 
@@ -67,9 +84,7 @@ You are ready to go now!
 
 Not all of the Teamwork API is supported yet but there is still a lot you can do! Below are some examples of how you can access Projects, Companies, and more. To work with a specific Object pass in the ID to perform actions on it. Data can be passed through for creating and editing.
 
-* * *
-
-### Account
+#### Account
 
 ```php
 // get account details
@@ -79,9 +94,7 @@ $teamwork->account()->details();
 $teamwork->account()->authenticate();
 ```
 
-* * *
-
-### Activity
+#### Activity
 
 ```php
 // get latest activity
@@ -94,9 +107,7 @@ $teamwork->activity()->latest([onlyStarred]);
 $teamwork->activity($id)->delete();
 ```
 
-* * *
-
-### Company
+#### Company
 
 ```php
 // view all companies
@@ -126,8 +137,6 @@ $teamwork->company($id)->delete();
 // people associated with comapny
 $teamwork->company($id)->people();
 ```
-
-* * *
 
 ### People
 
@@ -159,9 +168,7 @@ $teamwork->people()->me();
 $teamwork->people()->apiKeys();
 ```
 
-* * *
-
-### Projects
+#### Projects
 
 Projects have the most associated with them and are the most complicated to use. Below are all the methods associated with the `Projects` class.
 
