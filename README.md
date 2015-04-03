@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/quality-score.png?b=master&s=997768a5d702b571dac7d50ae4f85af7236bcf5d)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/coverage.png?b=master&s=c042749710f918bf24803ebe4f86491b53562fa8)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/build.png?b=master&s=22b2a99a72437be3ead6cc77c9bad8d38864221a)](https://scrutinizer-ci.com/g/rossedman/teamwork/build-status/master)
+[![Build Status](https://travis-ci.org/rossedman/teamwork.svg?branch=master)](https://travis-ci.org/rossedman/teamwork)
 ![Release](https://img.shields.io/github/release/rossedman/teamwork.svg?style=flat)
 ![License](https://img.shields.io/packagist/l/rossedman/teamwork.svg?style=flat)
 
