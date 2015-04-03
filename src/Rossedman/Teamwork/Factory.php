@@ -60,7 +60,7 @@ class Factory {
      */
     protected function getQualifiedName($method)
     {
-        return '\\'.$this->getNamespace().'\\'.strtoupper($method);
+        return $this->getNamespace().'\\'.ucfirst($method);
     }
 
     /**

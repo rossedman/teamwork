@@ -19,21 +19,21 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
     /**
      * @group factory
      */
-//    public function test_that_it_returns_new_account_object()
-//    {
-//        $factory = new Factory($this->requestable);
-//        $this->assertInstanceOf('Rossedman\Teamwork\Account', $factory->account());
-//    }
+    public function test_that_it_returns_new_account_object()
+    {
+        $factory = new Factory($this->requestable);
+        $this->assertInstanceOf('Rossedman\Teamwork\Account', $factory->account());
+    }
 
     /**
      * @group factory
      * @expectedException Rossedman\Teamwork\Exceptions\ClassNotCreatedException
      */
-//    public function test_that_it_fails_when_object_does_not_exist()
-//    {
-//        $factory = new Factory($this->requestable);
-//        $factory->butts();
-//    }
+    public function test_that_it_fails_when_object_does_not_exist()
+    {
+        $factory = new Factory($this->requestable);
+        $factory->butts();
+    }
 
     /**
      * @group factory
