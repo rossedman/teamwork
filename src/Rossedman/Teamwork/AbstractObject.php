@@ -2,7 +2,7 @@
 
 use Rossedman\Teamwork\Contracts\Requestable;
 
-abstract class Object {
+abstract class AbstractObject {
 
     protected $client;
 

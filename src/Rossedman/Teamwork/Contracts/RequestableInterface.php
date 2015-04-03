@@ -1,5 +1,5 @@
 <?php  namespace Rossedman\Teamwork\Contracts; 
 
-interface Requestable {
+interface RequestableInterface {
 
 }

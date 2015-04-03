@@ -1,6 +1,6 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Tasklist extends Object {
+class Tasklist extends AbstractObject {
 
     protected $wrapper  = 'tasklist';
 

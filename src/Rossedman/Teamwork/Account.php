@@ -1,6 +1,6 @@
 <?php  namespace Rossedman\Teamwork; 
 
-class Account extends Object {
+class Account extends AbstractObject {
 
     /**
      * Account Details

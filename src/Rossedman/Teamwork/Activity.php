@@ -1,6 +1,6 @@
 <?php  namespace Rossedman\Teamwork;
 
-class Activity extends Object {
+class Activity extends AbstractObject {
 
     /**
      * Latest Activity

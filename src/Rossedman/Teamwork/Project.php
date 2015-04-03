@@ -3,7 +3,7 @@
 use Rossedman\Teamwork\Traits\TimeTrait;
 use Rossedman\Teamwork\Traits\RestfulTrait;
 
-class Project extends Object {
+class Project extends AbstractObject {
 
     use RestfulTrait, TimeTrait;
 

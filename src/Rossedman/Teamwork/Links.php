@@ -2,7 +2,7 @@
 
 use Rossedman\Teamwork\Traits\RestfulTrait;
 
-class Links extends Object {
+class Links extends AbstractObject {
 
     use RestfulTrait;
 

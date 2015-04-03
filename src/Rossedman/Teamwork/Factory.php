@@ -1,6 +1,6 @@
 <?php namespace Rossedman\Teamwork;
 
-use Rossedman\Teamwork\Contracts\Requestable;
+use Rossedman\Teamwork\Contracts\RequestableInterface;
 use Rossedman\Teamwork\Exceptions\ClassNotCreatedException;
 
 class Factory {
@@ -8,9 +8,9 @@ class Factory {
     protected $client;
 
     /**
-     * @param Requestable $client
+     * @param RequestableInterface $client
      */
-    public function __construct(Requestable $client)
+    public function __construct(RequestableInterface $client)
     {
         $this->client = $client;
     }

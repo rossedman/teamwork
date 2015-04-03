@@ -1,9 +1,9 @@
 <?php  namespace Rossedman\Teamwork;
 
 use GuzzleHttp\Client as Guzzle;
-use Rossedman\Teamwork\Contracts\Requestable;
+use Rossedman\Teamwork\Contracts\RequestableInterface;
 
-class Client implements Requestable {
+class Client implements RequestableInterface {
 
     /**
      * @var GuzzleHttp\Client
@@ -14,6 +14,11 @@ class Client implements Requestable {
      * @var GuzzleHttp\Request
      */
     protected $request;
+
+    /**
+     * @var GuzzleHttp\Response
+     */
+    protected $response;
 
     /**
      * API Key
@@ -44,9 +49,9 @@ class Client implements Requestable {
     protected $dataFormat = 'json';
 
     /**
-     * @param Guzzle $client
-     * @param        $key
-     * @param        $url
+     * @param GuzzleHttp\Client $client
+     * @param                   $key
+     * @param                   $url
      */
     public function __construct(Guzzle $client, $key, $url)
     {
@@ -169,10 +174,10 @@ class Client implements Requestable {
     {
         if (substr($this->url, -1) != '/')
         {
-            $this->url = $this->url.'/';
+            $this->url = $this->url . '/';
         }
 
-        return $this->url.$endpoint.'.'.$this->dataFormat;
+        return $this->url . $endpoint . '.' . $this->dataFormat;
     }
 
     /**

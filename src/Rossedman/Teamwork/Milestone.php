@@ -2,7 +2,7 @@
 
 use Rossedman\Teamwork\Traits\RestfulTrait;
 
-class Milestone extends Object {
+class Milestone extends AbstractObject {
 
     use RestfulTrait;
 
