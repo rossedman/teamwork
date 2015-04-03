@@ -3,21 +3,14 @@
 1. [Installation](https://github.com/rossedman/teamwork#installation)
     * [Laravel Setup](https://github.com/rossedman/teamwork#laravel-setup)
     * [Without Laravel](https://github.com/rossedman/teamwork#configuration-without-laravel)
-2. About
-    * Dependencies
-    * Client
-    * Traits
-3. [Examples](https://github.com/rossedman/teamwork#examples)
+2. [Examples](https://github.com/rossedman/teamwork#examples)
     * [Account](https://github.com/rossedman/teamwork#account)
     * [Activity](https://github.com/rossedman/teamwork#activity)
     * [Company](https://github.com/rossedman/teamwork#company)
     * [People](https://github.com/rossedman/teamwork#people)
     * [Project](https://github.com/rossedman/teamwork#project)
-4. Roadmap
-5. Contributing
-6. License
-
-* * *
+3. [Roadmap](https://github.com/rossedman/teamwork#roadmap)
+4. [Contributing](https://github.com/rossedman/teamwork#contributing)
 
 ## Installation
 
@@ -138,7 +131,7 @@ $teamwork->company($id)->delete();
 $teamwork->company($id)->people();
 ```
 
-### People
+#### People
 
 ```php
 // gather all the peoples
@@ -218,3 +211,39 @@ $teamwork->projects($projectID)->archivedMessages();
 // get all milestones
 $teamwork->projects($projectID)->milestones();
 ```
+
+## Roadmap
+
+#### 1.0 Release
+
+- [x] Create Laravel 5 Facade
+- [x] Create Laravel 5 Service Provider
+- [x] Create Guzzle Client Wrapper
+- [x] Add Support For `Account` Endpoint
+- [x] Add Support For `Activity` Endpoint
+- [x] Add Support For `Company` Endpoint
+- [x] Add Support For `Links` Endpoint
+- [x] Add Support For `Message` Endpoint
+- [x] Add Support For `Milestone` Endpoint
+- [x] Add Support For `People` Endpoint
+- [x] Add Support For `Project` Endpoint
+- [ ] Add Support For `Tasks` Endpoint
+- [ ] Add Support For `Tasks Lists` Endpoint
+- [ ] Add Support For `Time` Endpoint
+- [ ] Create Testing Suite
+
+#### 1.1 Release
+
+- [ ] Add Support For Comments
+- [ ] Add Support For Permissions
+- [ ] Add Support For Notebooks
+
+#### 1.2 Release
+
+- [ ] Add Support For Categories
+- [ ] Add Support For People Status
+- [ ] Add Support For Files
+
+## Contributing
+
+If you're having problems, spot a bug, or have a feature suggestion, please log and issue on Github. If you'd like to have a crack yourself, fork the package and make a pull request. Please include tests for any added or changed functionality. If it's a bug, include a regression test.
