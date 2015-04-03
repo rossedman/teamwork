@@ -10,9 +10,9 @@
 3. [Examples](https://github.com/rossedman/teamwork#examples)
     * [Account](https://github.com/rossedman/teamwork#account)
     * [Activity](https://github.com/rossedman/teamwork#activity)
-    * [Company]((https://github.com/rossedman/teamwork#company)
-    * [People]((https://github.com/rossedman/teamwork#people)
-    * [Project]((https://github.com/rossedman/teamwork#project)
+    * [Company](https://github.com/rossedman/teamwork#company)
+    * [People](https://github.com/rossedman/teamwork#people)
+    * [Project](https://github.com/rossedman/teamwork#project)
 4. Roadmap
 5. Contributing
 6. License
