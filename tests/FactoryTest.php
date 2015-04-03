@@ -5,6 +5,12 @@ use Rossedman\Teamwork\Factory;
 
 class FactoryTest extends PHPUnit_Framework_TestCase {
 
+    public function setUp()
+    {
+        parent::setUp();
+        $this->requestable = m::mock('Rossedman\Teamwork\Contracts\Requestable');
+    }
+
     public function tearDown()
     {
         m::close();
@@ -12,7 +18,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
 
     public function test_that_it_returns_new_objects()
     {
-        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
+        $factory = new Factory($this->requestable);
 
         $this->assertInstanceOf('Rossedman\Teamwork\Account', $factory->account());
         $this->assertInstanceOf('Rossedman\Teamwork\Activity', $factory->activity());
@@ -33,14 +39,13 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
      */
     public function test_that_it_fails_when_object_does_not_exist()
     {
-        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
-
+        $factory = new Factory($this->requestable);
         $factory->butts();
     }
 
     public function test_that_it_parses_parameters()
     {
-        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
+        $factory = new Factory($this->requestable);
         $activity = $factory->activity(30);
 
         $this->assertObjectHasAttribute('id', $activity);
@@ -52,7 +57,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
      */
     public function test_that_it_only_accepts_id_as_parameter()
     {
-        $factory = new Factory(m::mock('Rossedman\Teamwork\Contracts\Requestable'));
+        $factory = new Factory($this->requestable);
         $factory->activity('butts');
     }
 }
