@@ -1,6 +1,6 @@
 <?php  namespace Rossedman\Teamwork;
 
-use Rossedman\Teamwork\RestfulTrait;
+use Rossedman\Teamwork\Traits\RestfulTrait;
 
 class Links extends Object {
 

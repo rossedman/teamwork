@@ -1,0 +1,11 @@
+filter:
+    excluded_paths:
+        - 'tests/*'
+checks:
+    php: true
+coding_style:
+    php:
+        spaces:
+            around_operators:
+                negation: true
+build: true
