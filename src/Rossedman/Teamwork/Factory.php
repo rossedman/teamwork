@@ -28,14 +28,14 @@ class Factory {
 
         if ( ! class_exists($class))
         {
-            throw new ClassNotCreatedException('Class $class could not be created.');
+            throw new ClassNotCreatedException("Class $class could not be created.");
         }
 
         // only accepts id
         if ($parameters != null)
         {
             if ( ! is_int($parameters[0])) {
-                throw new \InvalidArgumentException('This is not a valid ID');
+                throw new \InvalidArgumentException("This is not a valid ID");
             }
 
             return new $class($this->client, $parameters[0]);
