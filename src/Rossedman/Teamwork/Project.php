@@ -17,9 +17,11 @@ class Project extends AbstractObject {
      *
      * @return  mixed
      */
-    public function activity()
+    public function activity($args = null)
     {
-        return $this->client->get("$this->endpoint/$this->id/latestActivity")->response();
+        $this->areArgumentsValid($args, ['maxItems']);
+
+        return $this->client->get("$this->endpoint/$this->id/latestActivity", $args)->response();
     }
 
     /**

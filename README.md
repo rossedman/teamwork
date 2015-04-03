@@ -100,10 +100,10 @@ $teamwork->account()->authenticate();
 
 ```php
 // get latest activity
-$teamwork->activity()->latest(['maxItems']);
+$teamwork->activity()->latest(['maxItems' => 10]);
 
 // only get starred activity
-$teamwork->activity()->latest(['onlyStarred']);
+$teamwork->activity()->latest(['onlyStarred' => 1]);
 
 // delete activity
 $teamwork->activity($id)->delete();
@@ -176,49 +176,50 @@ Projects have the most associated with them and are the most complicated to use.
 
 ```php
 // get all projects
-$teamwork->projects()->all();
+$teamwork->project()->all();
 
 // find a project by ID
-$teamwork->projects($projectID)->find();
+$teamwork->project($projectID)->find();
 
 // update a project
-$teamwork->projects($projectID)->update([
+$teamwork->project($projectID)->update([
     "name" => "Satan, The Project",
     "description" => "Updating this project to be most evil",
     "companyID" => "666"
 ]);
 
 // remove a project
-$teamwork->projects($projectID)->delete();
+$teamwork->project($projectID)->delete();
 
 // latest activity on project
-$teamwork->projects($projectID)->activity();
+$teamwork->project($projectID)->activity();
+$teamwork->project($projectID)->activity(['maxItems' => 5]);
 
 // companies involved in project
-$teamwork->projects($projectID)->companies();
+$teamwork->project($projectID)->companies();
 
 // people included in project
-$teamwork->projects($projectID)->people();
+$teamwork->project($projectID)->people();
 
 // starred projects
-$teamwork->projects()->starred();
+$teamwork->project()->starred();
 
 // star/unstar a project
-$teamwork->projects($projectID)->star();
-$teamwork->projects($projectID)->unstar();
+$teamwork->project($projectID)->star();
+$teamwork->project($projectID)->unstar();
 
 // get all projects links
-$teamwork->projects($projectID)->links();
+$teamwork->project($projectID)->links();
 
 // time total
-$teamwork->projects($projectID)->timeTotal();
+$teamwork->project($projectID)->timeTotal();
 
 // messages
-$teamwork->projects($projectID)->latestMessages();
-$teamwork->projects($projectID)->archivedMessages();
+$teamwork->project($projectID)->latestMessages();
+$teamwork->project($projectID)->archivedMessages();
 
 // get all milestones
-$teamwork->projects($projectID)->milestones();
+$teamwork->project($projectID)->milestones();
 ```
 
 ## Roadmap
