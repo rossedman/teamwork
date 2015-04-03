@@ -33,6 +33,12 @@ Just add this to your `composer.json` and then run `composer update`.
 "rossedman/teamwork": "dev-master"
 ```
 
+You can also simply add it like this
+
+```
+composer require "rossedman/teamwork:dev-master"
+```
+
 ## Laravel Setup
 
 This wrapper comes with support for `Laravel 5`. This includes a service provider as well as a facade for easy access.
