@@ -1,11 +1,11 @@
 # Teamwork API PHP Wrapper
 
-![Release](https://img.shields.io/github/release/rossedman/teamwork.svg?style=flat-square)
-![Build](https://img.shields.io/travis/rossedman/teamwork.svg?style=flat-square)
-![Code Quality](https://img.shields.io/scrutinizer/g/rossedman/teamwork.svg?style=flat-square)
-![Coverage](https://img.shields.io/scrutinizer/coverage/g/rossedman/teamwork.svg?style=flat-square)
-![Download](https://img.shields.io/packagist/dt/rossedman/teamwork.svg?style=flat-square)
-![License](https://img.shields.io/packagist/l/rossedman/teamwork.svg?style=flat-square)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/quality-score.png?b=master&s=997768a5d702b571dac7d50ae4f85af7236bcf5d)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/coverage.png?b=master&s=c042749710f918bf24803ebe4f86491b53562fa8)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/build.png?b=master&s=22b2a99a72437be3ead6cc77c9bad8d38864221a)](https://scrutinizer-ci.com/g/rossedman/teamwork/build-status/master)
+![Release](https://img.shields.io/github/release/rossedman/teamwork.svg?style=flat)
+![Download](https://img.shields.io/packagist/dt/rossedman/teamwork.svg?style=flat)
+![License](https://img.shields.io/packagist/l/rossedman/teamwork.svg?style=flat)
 
 This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwork.com) API. This package was developed to be used with [Laravel 5](http://www.laravel.com) but can also be used stand alone as well. I hope this helps you automate and extend Teamwork to integrate even more into your business! Have fun and good luck. :metal:
 
