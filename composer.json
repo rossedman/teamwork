@@ -1,7 +1,7 @@
 {
     "name": "rossedman/teamwork",
-    "description": "PHP wrapper for the Teamwork API",
-    "keywords": ["teamwork", "api", "laravel"],
+    "description": "PHP wrapper for the Teamwork project management API",
+    "keywords": ["teamwork", "api", "laravel", "project management"],
     "license": "MIT",
     "authors": [
         {
