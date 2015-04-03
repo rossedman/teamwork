@@ -18,11 +18,17 @@ class ObjectTest extends PHPUnit_Framework_TestCase {
         m::close();
     }
 
+    /**
+     * @group object
+     */
     public function test_it_has_client_injected()
     {
         $this->assertObjectHasAttribute('client', $this->object);
     }
 
+    /**
+     * @group object
+     */
     public function test_if_arguments_are_valid()
     {
         $args = ['testArg' => 2, 'testArg2' => 3];
@@ -33,6 +39,9 @@ class ObjectTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($return);
     }
 
+    /**
+     * @group object
+     */
     public function test_if_arguments_are_null()
     {
         $return = $this->object->valid_args(null, []);
@@ -41,6 +50,7 @@ class ObjectTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * @group object
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage This call only accepts these arguments: testArg | testArg2
      */

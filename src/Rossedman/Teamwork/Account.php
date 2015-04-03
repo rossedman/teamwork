@@ -6,6 +6,7 @@ class Account extends Object {
      * Account Details
      * GET /account.json
      *
+     * @link http://developer.teamwork.com/account
      * @return mixed
      */
     public function details()
@@ -17,6 +18,7 @@ class Account extends Object {
      * Authenticate Call
      * GET /authenticate.json
      *
+     * @link http://developer.teamwork.com/account
      * @return mixed
      */
     public function authenticate()

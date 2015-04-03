@@ -18,6 +18,9 @@ class ClientTest extends PHPUnit_Framework_TestCase {
         m::close();
     }
 
+    /**
+     * @group client
+     */
     public function test_it_builds_the_request()
     {
         $client = new Client($this->guzzle, 'key', 'http://teamwork.com');
@@ -33,6 +36,9 @@ class ClientTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('GuzzleHttp\Message\Request', $returned->getRequest());
     }
 
+    /**
+     * @group client
+     */
     public function test_build_url()
     {
         $client = new Client($this->guzzle, 'key', 'http://teamwork.com/');
@@ -42,6 +48,9 @@ class ClientTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('http://teamwork.com/test.json', $url);
     }
 
+    /**
+     * @group client
+     */
     public function test_build_url_with_no_trailing_slash()
     {
         $client = new Client($this->guzzle, 'key', 'http://teamwork.com');

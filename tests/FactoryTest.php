@@ -16,6 +16,9 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
         m::close();
     }
 
+    /**
+     * @group factory
+     */
     public function test_that_it_returns_new_objects()
     {
         $factory = new Factory($this->requestable);
@@ -35,6 +38,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * @group factory
      * @expectedException \Rossedman\Teamwork\Exceptions\ClassNotCreatedException
      */
     public function test_that_it_fails_when_object_does_not_exist()
@@ -43,6 +47,9 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
         $factory->butts();
     }
 
+    /**
+     * @group factory
+     */
     public function test_that_it_parses_parameters()
     {
         $factory = new Factory($this->requestable);
@@ -53,6 +60,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * @group factory
      * @expectedException \InvalidArgumentException
      */
     public function test_that_it_only_accepts_id_as_parameter()

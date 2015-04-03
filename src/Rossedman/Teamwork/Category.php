@@ -2,4 +2,6 @@
 
 class Category extends Object {
 
+    
+    
 }
