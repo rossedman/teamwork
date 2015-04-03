@@ -98,4 +98,49 @@ class Project extends Object {
     {
         return $this->client->get("$this->endpoint/$this->id/time/total")->response();
     }
+
+    /**
+     * Latest Messages
+     * GET /projects/{project_id}/posts.json
+     *
+     * @return mixed
+     */
+    public function latestMessages()
+    {
+        return $this->client->get("$this->endpoint/$this->id/posts")->response();
+    }
+
+    /**
+     * Archived Messages
+     * GET /projects/{project_id}/posts/archive.json
+     *
+     * @return mixed
+     */
+    public function archivedMessages()
+    {
+        return $this->client->get("$this->endpoint/$this->id/posts/archive")->response();
+    }
+
+    /**
+     * List Milestones
+     * GET /projects/{project_id}/milestones.json
+     *
+     * @return mixed
+     */
+    public function milestones()
+    {
+        return $this->client->get("$this->endpoint/$this->id/milestones")->response();
+    }
+
+    /**
+     * Links
+     * GET /projects/{project_id}/links.json
+     *
+     * @return mixed
+     */
+    public function links()
+    {
+        return $this->client->get("$this->endpoint/$this->id/links")->response();
+    }
+
 }

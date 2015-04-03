@@ -7,14 +7,6 @@ class Task extends Object {
 
     use RestfulTrait, TimeTrait;
 
-    public function complete(){
-
-    }
-
-    public function uncomplete(){
-
-    }
-
     /**
      * Time Totals
      * GET /projects/{id}/time/total.json
