@@ -70,6 +70,22 @@ If you are using Laravel then add a `teamwork` array to your `config/services.ph
 ],
 ```
 
+### Use
+
+If you are using the Facade with Laravel youc an easily access Teamwork like this
+
+```php
+Teamwork::people()->all();
+```
+
+If you want to use dependency injection to make your application easy to test the Service Provider binds `Rossedman\Teamwork\Factory`. Here is an example of how to use it with dependency injection
+
+```php
+Route::get('/test', function(Rossedman\Teamwork\Factory $teamwork) {
+   $activity = $teamwork->activity()->latest();
+});
+```
+
 ## Configuration Without Laravel
 
 If you are not using Laravel you can instantiate the class like this
