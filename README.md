@@ -1,5 +1,7 @@
 # Teamwork API PHP Wrapper
 
+This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwork.com) API. This package was developed to be used with [Laravel 5](http://www.laravel.com) but can also be used stand alone as well. I hope this helps you automate and extend Teamwork to integrate even more into your business! Have fun and good luck. :+1:
+
 1. [Installation](https://github.com/rossedman/teamwork#installation)
     * [Laravel Setup](https://github.com/rossedman/teamwork#laravel-setup)
     * [Without Laravel](https://github.com/rossedman/teamwork#configuration-without-laravel)
@@ -51,8 +53,6 @@ If you are using Laravel then add a `teamwork` array to your `config/services.ph
     'url'  => 'YourTeamworkUrl'
 ],
 ```
-
-* * *
 
 ## Configuration Without Laravel
 
@@ -234,15 +234,15 @@ $teamwork->projects($projectID)->milestones();
 
 #### 1.1 Release
 
-- [ ] Add Support For Comments
-- [ ] Add Support For Permissions
-- [ ] Add Support For Notebooks
+- [ ] Add Support For `Comments`
+- [ ] Add Support For `Permissions`
+- [ ] Add Support For `Notebooks`
 
 #### 1.2 Release
 
-- [ ] Add Support For Categories
-- [ ] Add Support For People Status
-- [ ] Add Support For Files
+- [ ] Add Support For `Categories`
+- [ ] Add Support For `People Status`
+- [ ] Add Support For `Files`
 
 ## Contributing
 
