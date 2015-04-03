@@ -19,22 +19,15 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
     /**
      * @group factory
      */
-    public function test_that_it_returns_new_objects()
+    public function test_that_it_returns_new_account_object()
     {
         $factory = new Factory($this->requestable);
 
-        $this->assertInstanceOf('Rossedman\Teamwork\Account', $factory->account());
-        $this->assertInstanceOf('Rossedman\Teamwork\Activity', $factory->activity());
-        $this->assertInstanceOf('Rossedman\Teamwork\Category', $factory->category());
-        $this->assertInstanceOf('Rossedman\Teamwork\Comment', $factory->comment());
-        $this->assertInstanceOf('Rossedman\Teamwork\Company', $factory->company());
-        $this->assertInstanceOf('Rossedman\Teamwork\Message', $factory->message());
-        $this->assertInstanceOf('Rossedman\Teamwork\Milestone', $factory->milestone());
-        $this->assertInstanceOf('Rossedman\Teamwork\Notebook', $factory->notebook());
-        $this->assertInstanceOf('Rossedman\Teamwork\People', $factory->people());
-        $this->assertInstanceOf('Rossedman\Teamwork\Links', $factory->links());
-        $this->assertInstanceOf('Rossedman\Teamwork\Time', $factory->time());
-        $this->assertInstanceOf('Rossedman\Teamwork\Task', $factory->task());
+        $account = $factory->account();
+
+        var_dump($account);
+
+        $this->assertInstanceOf('Rossedman\Teamwork\Account', $account);
     }
 
     /**

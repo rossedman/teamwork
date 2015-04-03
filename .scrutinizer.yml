@@ -3,3 +3,21 @@ checks:
 filter:
     paths: 
         - src/*
+before_commands:
+    - 'composer install --dev --prefer-source'
+tools:
+    external_code_coverage:
+        timeout: 300
+    php_code_sniffer: true
+    php_cpd:
+        enabled: true
+        excluded_dirs: [vendor, tests, examples]
+    php_pdepend:
+        enabled: true
+        excluded_dirs: [vendor, tests, examples]
+    php_loc:
+        enabled: true
+        excluded_dirs: [vendor, tests, examples]
+    php_hhvm: false
+    php_mess_detector: true
+    php_analyzer: true
