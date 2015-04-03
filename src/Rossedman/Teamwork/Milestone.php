@@ -11,6 +11,34 @@ class Milestone extends AbstractObject {
     protected $endpoint = 'milestones';
 
     /**
+     * GET /milestones.json
+     *
+     * @param null $args
+     *
+     * @return mixed
+     */
+    public function all($args = null)
+    {
+        $this->areArgumentsValid($args, ['getProgress']);
+
+        return $this->client->get($this->endpoint, $args)->response();
+    }
+
+    /**
+     * GET /milestones/{milestone_id}.json
+     *
+     * @param null $args
+     *
+     * @return mixed
+     */
+    public function find($args = null)
+    {
+        $this->areArgumentsValid($args, ['getProgress', 'showTaskLists', 'showTasks']);
+
+        return $this->client->get("$this->endpoint/$this->id", $args)->response();
+    }
+
+    /**
      * PUT /milestones/{id}/complete.json
      *
      * @param array $data

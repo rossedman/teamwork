@@ -127,11 +127,15 @@ class Project extends AbstractObject {
      * List Milestones
      * GET /projects/{project_id}/milestones.json
      *
+     * @param null $args
+     *
      * @return mixed
      */
-    public function milestones()
+    public function milestones($args = null)
     {
-        return $this->client->get("$this->endpoint/$this->id/milestones")->response();
+        $this->areArgumentsValid($args, ['getProgress']);
+
+        return $this->client->get("$this->endpoint/$this->id/milestones", $args)->response();
     }
 
 }

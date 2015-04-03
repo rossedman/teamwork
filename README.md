@@ -19,6 +19,7 @@ This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwo
     * [Activity](https://github.com/rossedman/teamwork#activity)
     * [Company](https://github.com/rossedman/teamwork#company)
     * [People](https://github.com/rossedman/teamwork#people)
+    * [Milestone](https://github.com/rossedman/teamwork#milestone)
     * [Project](https://github.com/rossedman/teamwork#project)
 3. [Roadmap](https://github.com/rossedman/teamwork#roadmap)
 4. [Contributing](https://github.com/rossedman/teamwork#contributing)
@@ -146,6 +147,12 @@ $teamwork->company($id)->people();
 // gather all the peoples
 $teamwork->people()->all();
 
+// paginate people
+$teamwork->people()->all(['page' => "3", "pageSize" => "10"]);
+
+// get by email address
+$teamwork->people()->all(['emailaddress' => 'test@awesome.com']);
+
 // create a person
 $teamwork->people()->create([
     "first-name" => "Warlock",
@@ -168,6 +175,26 @@ $teamwork->people()->me();
 
 // get all apiKeys, for site administrator only
 $teamwork->people()->apiKeys();
+```
+
+#### Milestone
+
+```php
+// get all milestones
+$teamwork->milestone()->all();
+
+// get milestones with progress
+$teamwork->milestone()->all(['getProgress' => 'true']);
+
+// find milestone by ID
+$teamwork->milestone($id)->find();
+
+// find milestone by ID with tasks, task lists and progress
+$teamwork->milestone($id)->find([
+    'getProgress' => 'true',
+    'showTaskLists' => 'true',
+    'showTasks' => 'true'
+]);
 ```
 
 #### Projects
