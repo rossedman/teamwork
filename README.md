@@ -177,25 +177,52 @@ $teamwork->people()->me();
 $teamwork->people()->apiKeys();
 ```
 
+#### Task
+
+Get all tasks.
+
+    $teamwork->task()->all();
+
+You can also filter tasks by many different parameters that are listed [here](http://developer.teamwork.com/todolistitems#retrieve_all_task) in the Teamwork developers docs. This example shows how to filter by tasks that are overdue and then order them by date.
+
+    $teamwork->task()->all(['filter' => 'overdue', 'sort' => 'duedate']);
+
+Retrieve a task by `id`.
+
+    $teamwork->task($id)->find();
+
+Retrieve a task by `id` and exclude files and subtasks.
+
+    $teamwork->task($id)->find(['getFiles' => 'false', 'nestSubTasks' => 'true]);
+
+Complete and uncomplete a task.
+
+```
+$teamwork->task(1691080)->complete();
+$teamwork->task(1691080)->uncomplete();
+```
+
 #### Milestone
 
-```php
-// get all milestones
-$teamwork->milestone()->all();
+Get all milestones in Teamwork.
 
-// get milestones with progress
-$teamwork->milestone()->all(['getProgress' => 'true']);
+    $teamwork->milestone()->all();
 
-// find milestone by ID
-$teamwork->milestone($id)->find();
+Get all milestones and get progress of each milestone.
 
-// find milestone by ID with tasks, task lists and progress
-$teamwork->milestone($id)->find([
-    'getProgress' => 'true',
-    'showTaskLists' => 'true',
-    'showTasks' => 'true'
-]);
-```
+    $teamwork->milestone()->all(['getProgress' => 'true']);
+
+Find a specific milestone by `id`;
+
+    $teamwork->milestone($id)->find();
+
+Find milestone by ID with tasks, task lists and progress.
+
+    $teamwork->milestone($id)->find([
+        'getProgress' => 'true',
+        'showTaskLists' => 'true',
+        'showTasks' => 'true'
+    ]);
 
 #### Projects
 
