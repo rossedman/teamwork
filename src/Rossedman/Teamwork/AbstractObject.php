@@ -1,6 +1,6 @@
 <?php  namespace Rossedman\Teamwork; 
 
-use Rossedman\Teamwork\Contracts\Requestable;
+use Rossedman\Teamwork\Contracts\RequestableInterface;
 
 abstract class AbstractObject {
 
@@ -13,7 +13,7 @@ abstract class AbstractObject {
     /**
      * @param Requestable $client
      */
-    public function __construct(Requestable $client, $id = null)
+    public function __construct(RequestableInterface $client, $id = null)
     {
         $this->client = $client;
         $this->id     = $id;
