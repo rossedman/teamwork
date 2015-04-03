@@ -8,7 +8,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase {
     public function setUp()
     {
         parent::setUp();
-        $this->requestable = m::mock('Rossedman\Teamwork\Contracts\Requestable');
+        $this->requestable = m::mock('Rossedman\Teamwork\Contracts\RequestableInterface');
     }
 
     public function tearDown()

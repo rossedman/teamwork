@@ -100,10 +100,10 @@ $teamwork->account()->authenticate();
 
 ```php
 // get latest activity
-$teamwork->activity()->latest([maxItems]);
+$teamwork->activity()->latest(['maxItems']);
 
 // only get starred activity
-$teamwork->activity()->latest([onlyStarred]);
+$teamwork->activity()->latest(['onlyStarred']);
 
 // delete activity
 $teamwork->activity($id)->delete();

@@ -5,6 +5,10 @@ filter:
         - src/*
 before_commands:
     - 'composer install --dev --prefer-source'
+build:
+    environment:
+        php:
+            version: 5.5
 tools:
     php_code_sniffer: true
     php_cpd:
