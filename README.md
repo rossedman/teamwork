@@ -5,6 +5,7 @@
 ![Code Quality](https://img.shields.io/scrutinizer/g/rossedman/teamwork.svg?style=flat-square)
 ![Coverage](https://img.shields.io/scrutinizer/coverage/g/rossedman/teamwork.svg?style=flat-square)
 ![Download](https://img.shields.io/packagist/dt/rossedman/teamwork.svg?style=flat-square)
+![License](https://img.shields.io/packagist/l/rossedman/teamwork.svg?style=flat-square)
 
 This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwork.com) API. This package was developed to be used with [Laravel 5](http://www.laravel.com) but can also be used stand alone as well. I hope this helps you automate and extend Teamwork to integrate even more into your business! Have fun and good luck. :metal:
 
