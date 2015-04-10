@@ -65,7 +65,7 @@ class Project extends AbstractObject {
      */
     public function star()
     {
-        return $this->client->put("$this->endpoint/$this->id/star")->response();
+        return $this->client->put("$this->endpoint/$this->id/star", [])->response();
     }
 
     /**
@@ -76,7 +76,7 @@ class Project extends AbstractObject {
      */
     public function unstar()
     {
-        return $this->client->put("$this->endpoint/$this->id/unstar")->response();
+        return $this->client->put("$this->endpoint/$this->id/unstar", [])->response();
     }
 
     /**

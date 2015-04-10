@@ -217,6 +217,7 @@ $teamwork->people()->create([
     "last-name" => "Mastermind",
     "email-address" => "witchery@thedevil.com",
     "user-type" => "account",
+    "user-name" => "Deathlok"
     ...
 ]);
 ```
@@ -326,13 +327,21 @@ Find a specific project by ID.
 $teamwork->project($projectID)->find();
 ```
 
+Create a project.
+
+```php
+$teamwork->project()->create([
+    "name" => "My New Amazing Project",
+    "description" => "This is a project that I will dedicate my whole life too",
+    "companyId" => "999"
+]);
+```
+
 Update a project.
 
 ```php
 $teamwork->project($projectID)->update([
-    "name" => "Satan, The Project",
-    "description" => "Updating this project to be most evil",
-    "companyID" => "666"
+    "name" => "Satan, The Project"
 ]);
 ```
 
@@ -397,6 +406,18 @@ Get all the milestones
 
 ```php
 $teamwork->project($projectID)->milestones();
+```
+
+Create a milestone associated with a project
+
+```php
+$teamwork->project($projectId)->createMilestone([
+    "title" => "Save The World",
+    "description" => "You must save the world in the next few days",
+    "deadline" => "20150402",
+    "notify" => true,
+    "reminder" => true
+]);
 ```
 
 ## Roadmap
