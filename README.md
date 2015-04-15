@@ -277,8 +277,36 @@ $teamwork->task($id)->find(['getFiles' => 'false', 'nestSubTasks' => 'true]);
 Complete and uncomplete a task.
 
 ```php
-$teamwork->task(1691080)->complete();
-$teamwork->task(1691080)->uncomplete();
+$teamwork->task($id)->complete();
+$teamwork->task($id)->uncomplete();
+```
+
+#### Tasklists
+
+Find a specific tasklist
+
+```php
+$teamwork->tasklist($id)->find();
+```
+
+Update a tasklist
+
+```php
+$teamwork->tasklist($id)->update([
+    'name' => 'Change The Name'
+]);
+```
+
+Delete a tasklist
+
+```php
+$teamwork->tasklist($id)->delete()
+```
+
+Get time totals for a tasklist
+
+```php
+$teamwork->tasklist($id)->timeTotal();
 ```
 
 #### Milestone
@@ -435,7 +463,7 @@ $teamwork->project($projectId)->createMilestone([
 - [x] Add Support For `Milestone` Endpoint
 - [x] Add Support For `People` Endpoint
 - [x] Add Support For `Project` Endpoint
-- [ ] Add Support For `Tasks` Endpoint
+- [x] Add Support For `Tasks` Endpoint
 - [ ] Add Support For `Tasks Lists` Endpoint
 - [ ] Add Support For `Time` Endpoint
 - [x] Create Testing Suite
