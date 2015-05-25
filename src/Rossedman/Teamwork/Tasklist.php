@@ -23,7 +23,7 @@ class Tasklist extends AbstractObject {
      */
     public function update($data)
     {
-        return $this->client->put("tasklist/$this->id", [$this->wrapper => $data])->response();
+        return $this->client->put("$this->endpoint/$this->id", [$this->wrapper => $data])->response();
     }
 
     /**
