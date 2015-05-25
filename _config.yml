@@ -2,13 +2,10 @@
 title: Teamwork API PHP Wrapper
 email: ross.edman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/teamwork/" # the subpath of your site, e.g. /blog/
+  A PHP API for Teamwork PM with support for Laravel 5. Useful for
+  added integrations and webhooks.
+baseurl: "/teamwork" # the subpath of your site, e.g. /blog/
 url: "http://rossedman.github.io" # the base hostname & protocol for your site
 twitter_username: namdebeats
 github_username:  rossedman
-
-# Build settings
 markdown: kramdown
