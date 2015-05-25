@@ -1,4 +1,4 @@
-# Teamwork API PHP Wrapper
+# Laravel 5 Teamwork PM API Bridge
 
 ![teamwork-graphic](https://cloud.githubusercontent.com/assets/2628905/7765016/853f462c-001e-11e5-90ac-389bf1a6c2fe.jpg)
 
