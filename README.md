@@ -95,7 +95,7 @@ You are ready to go now!
 
 Not all of the Teamwork API is supported yet but there is still a lot you can do! Below are some examples of how you can access Projects, Companies, and more. To work with a specific Object pass in the ID to perform actions on it. Data can be passed through for creating and editing.
 
-**To see more examples [visit the docs](http://rossedman.github.io/teamwork)**
+**To see more examples [visit the docs](http://teamwork.rossedman.com)**
 
 ```php
 // create a project
