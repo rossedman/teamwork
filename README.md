@@ -311,6 +311,12 @@ Get time totals for a tasklist
 $teamwork->tasklist($id)->timeTotal();
 ```
 
+Get tasklists associated with a project
+
+```php
+$teamwork->project($id)->tasklists();
+```
+
 #### Milestone
 
 Get all milestones in Teamwork.
