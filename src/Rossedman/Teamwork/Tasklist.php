@@ -1,4 +1,4 @@
-<?php  namespace Rossedman\Teamwork; 
+<?php  namespace Rossedman\Teamwork;
 
 use Rossedman\Teamwork\Traits\RestfulTrait;
 
@@ -6,10 +6,10 @@ class Tasklist extends AbstractObject {
 
     protected $wrapper  = 'todo-list';
 
-    protected $endpoint = 'todo_lists';
+    protected $endpoint = 'tasklists';
 
     /**
-     * GET /todo_lists/{$id}.json
+     * GET /tasklists/{$id}.json
      * @return mixed
      */
     public function find()
@@ -23,7 +23,7 @@ class Tasklist extends AbstractObject {
      */
     public function update($data)
     {
-        return $this->client->put("$this->endpoint/$this->id", [$this->wrapper => $data])->response();
+        return $this->client->put("tasklist/$this->id", [$this->wrapper => $data])->response();
     }
 
     /**
@@ -33,6 +33,15 @@ class Tasklist extends AbstractObject {
     public function delete()
     {
         return $this->client->delete("$this->endpoint/$this->id")->response();
+    }
+
+    /**
+     * GET /tasklists/templates.json
+     * @return [type] [description]
+     */
+    public function templates()
+    {
+        return $this->client->get("$this->endpoint/templates")->response();
     }
 
     /**

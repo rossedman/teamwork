@@ -2,7 +2,6 @@
 
 ![teamwork-graphic](https://cloud.githubusercontent.com/assets/2628905/7765016/853f462c-001e-11e5-90ac-389bf1a6c2fe.jpg)
 
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/quality-score.png?b=master&s=997768a5d702b571dac7d50ae4f85af7236bcf5d)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/rossedman/teamwork/badges/coverage.png?b=master&s=c042749710f918bf24803ebe4f86491b53562fa8)](https://scrutinizer-ci.com/g/rossedman/teamwork/?branch=master)
 [![Build Status](https://travis-ci.org/rossedman/teamwork.svg?branch=master)](https://travis-ci.org/rossedman/teamwork)
@@ -453,29 +452,10 @@ $teamwork->project($projectId)->createMilestone([
 
 ## Roadmap
 
-#### 1.0 Release
-
-- [x] Create Laravel 5 Facade
-- [x] Create Laravel 5 Service Provider
-- [x] Create Guzzle Client Wrapper
-- [x] Add Support For `Account` Endpoint
-- [x] Add Support For `Activity` Endpoint
-- [x] Add Support For `Company` Endpoint
-- [x] Add Support For `Links` Endpoint
-- [x] Add Support For `Message` Endpoint
-- [x] Add Support For `Milestone` Endpoint
-- [x] Add Support For `People` Endpoint
-- [x] Add Support For `Project` Endpoint
-- [x] Add Support For `Tasks` Endpoint
-- [ ] Add Support For `Tasks Lists` Endpoint
-- [ ] Add Support For `Time` Endpoint
-- [x] Create Testing Suite
-
 #### 1.1 Release
 
 - [ ] Add Support For `Comments`
 - [ ] Add Support For `Permissions`
-- [ ] Add Support For `Notebooks`
 
 #### 1.2 Release
 
