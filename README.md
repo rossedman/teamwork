@@ -15,13 +15,13 @@ This is a simple PHP Client that can connect to the [Teamwork](http://www.teamwo
 Just add this to your `composer.json` and then run `composer update`.
 
 ```
-"rossedman/teamwork": "dev-master"
+"rossedman/teamwork": "~1.0"
 ```
 
 You can also simply add it like this
 
 ```
-composer require "rossedman/teamwork:dev-master"
+composer require "rossedman/teamwork:~1.0"
 ```
 
 ## Laravel Setup
