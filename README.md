@@ -456,12 +456,14 @@ $teamwork->project($projectId)->createMilestone([
 
 - [ ] Add Support For `Comments`
 - [ ] Add Support For `Permissions`
+- [ ] Add Support For `Time` Endpoint
 
 #### 1.2 Release
 
 - [ ] Add Support For `Categories`
 - [ ] Add Support For `People Status`
 - [ ] Add Support For `Files`
+- [ ] Add Support For `Notebooks`
 
 ## Contributing
 
