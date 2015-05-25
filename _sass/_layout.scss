@@ -41,15 +41,38 @@ body {
   }
   h2 {
     color: shade($gray-dark, 40%);
-    margin-top: 0;
+    margin-top: $vertical-sm;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   .highlight {
     margin-left: -$vertical-sm;
     margin-right: -$vertical-sm;
+  }
+  p > code {
+    background: tint($gray, 85%);
+    border-radius: 2px;
+    color: $blue-dark;
+    padding: 2px 5px;
   }
 }
 
 .title-link {
   color: $orange;
   text-decoration: none;
+}
+
+.site-footer {
+  background: shade($blue-dark, 20%);
+  color: tint($blue, 20%);
+  font-family: $code-font-family;
+  font-size: 0.75em;
+  padding: $vertical-sm;
+  text-align: center;
+  a {
+    color: tint($blue, 30%);
+    font-weight: 600;
+    text-decoration: none;
+  }
 }

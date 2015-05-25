@@ -1,0 +1,15 @@
+<section class="content">
+  <h2><a href="#configuration-without-laravel" class="title-link">#</a> Configuration Without Laravel</h2>
+  <p>If you are not using Laravel you can instantiate and use Teamwork. Once you instantiate these classes you can use the class as shown in the examples.</p>
+{% highlight php %}
+<?php
+require "vendor/autoload.php";
+
+use GuzzleHttp\Client as Guzzle;
+use Rossedman\Teamwork\Client;
+use Rossedman\Teamwork\Factory as Teamwork;
+
+$client     = new Client(new Guzzle, 'YourSecretKey', 'YourTeamworkUrl');
+$teamwork   = new Teamwork($client);
+{% endhighlight %}
+</section>

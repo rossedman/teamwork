@@ -1,0 +1,43 @@
+<section class="content">
+  <h2><a href="#configuration-with-laravel" class="title-link">#</a> Configuration With Laravel</h2>
+  <p>This wrapper comes with support for Laravel 5. This includes a service provider as well as a facade for easy access. Once this package is pulled into your project just add this to your <code>config/app.php</code> file.</p>
+{% highlight php %}
+'providers' => [
+  ...
+  'Rossedman\Teamwork\TeamworkServiceProvider',
+],
+{% endhighlight %}
+  <p>and then add the facade to your aliases array</p>
+{% highlight php %}
+'aliases' => [
+  ...
+  'Teamwork' => 'Rossedman\Teamwork\Facades\Teamwork',
+],
+{% endhighlight %}
+
+  <h2>Add To Services</h2>
+  <p>If you are using Laravel then add a teamwork array to your <code>config/services.php</code> file</p>
+{% highlight php %}
+...
+'teamwork' => [
+    'key'  => 'YourSecretKey',
+    'url'  => 'YourTeamworkUrl'
+],
+{% endhighlight %}
+
+  <h2>Use</h2>
+  <p>If you are using the Facade with Laravel youc an easily access Teamwork like this</p>
+{% highlight php %}
+<?php
+Teamwork::people()->all();
+{% endhighlight %}
+  <p>
+    If you want to use dependency injection to make your application easy to test the Service Provider binds <code>Rossedman\Teamwork\Factory</code>. Here is an example of how to use it with dependency injection
+  </p>
+{% highlight php %}
+<?php
+Route::get('/test', function(Rossedman\Teamwork\Factory $teamwork) {
+   $activity = $teamwork->activity()->latest();
+});
+{% endhighlight %}
+</section>
