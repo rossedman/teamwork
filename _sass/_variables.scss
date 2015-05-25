@@ -1,0 +1,30 @@
+
+//=== Colors
+//================================
+$blue:         #5085C9;
+$blue-dark:    #4173b2;
+$blue-darker:  #203143;
+$orange:       #f3b62a;
+$orange-dark:  #eb922e;
+$gray:         #717f8a;
+$gray-dark:    #586671;
+
+//=== Typography
+//================================
+$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+$code-font-family: 'Source Code Pro', monospace;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.8;
+$text-color:       $gray-dark;
+
+//=== Grid
+//================================
+$max-width: em(800);
+
+//=== Spacing
+//================================
+$vertical-lg: 120px;
+$vertical:    60px;
+$vertical-sm: 30px;
+$vertical-xs: 15px;

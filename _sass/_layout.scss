@@ -1,0 +1,55 @@
+.wrapper {
+  @include outer-container;
+}
+
+//=== Body
+//=====================
+body {
+  background: $blue-dark;
+  color: $gray-dark;
+  font-family: $base-font-family;
+  font-size: 16px;
+  line-height: 1.8em;
+}
+
+//=== Header
+//=====================
+.site-header {
+  background: $blue;
+  .wrapper {
+    background: url('../images/teamwork-head.png') no-repeat center 100px transparent;
+    padding: $vertical 0 $vertical-lg*1.4;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  .teamwork-logotype {
+    margin-bottom: $vertical-xs;
+  }
+}
+
+//=== Content
+//=====================
+.content {
+  background: #FFF;
+  border-radius: 4px;
+  padding: $vertical-sm;
+  margin-bottom: $vertical-sm;
+  &.first {
+    margin-top: $vertical-sm;
+  }
+  h2 {
+    color: shade($gray-dark, 40%);
+    margin-top: 0;
+  }
+  .highlight {
+    margin-left: -$vertical-sm;
+    margin-right: -$vertical-sm;
+  }
+}
+
+.title-link {
+  color: $orange;
+  text-decoration: none;
+}
