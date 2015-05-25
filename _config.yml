@@ -4,8 +4,8 @@ email: ross.edman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A PHP API for Teamwork PM with support for Laravel 5. Useful for
   added integrations and webhooks.
-baseurl: "/teamwork" # the subpath of your site, e.g. /blog/
-url: "http://rossedman.github.io" # the base hostname & protocol for your site
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://teamwork.rossedman.com" # the base hostname & protocol for your site
 twitter_username: namdebeats
 github_username:  rossedman
 markdown: redcarpet
