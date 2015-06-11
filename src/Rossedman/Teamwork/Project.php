@@ -139,6 +139,18 @@ class Project extends AbstractObject {
     }
 
     /**
+     * Create milestone associated with this project
+     * POST /projects/{project_id}/milestones.json
+     *
+     * @param $args
+     *
+     * @return mixed
+     */
+    public function createMilestone($args) {
+        return $this->client->post("$this->endpoint/$this->id/milestones", ['milestone' => $args])->response();
+    }
+
+    /**
      * Tasklists
      * GET /projects/{project_id}/tasklists.json
      *
