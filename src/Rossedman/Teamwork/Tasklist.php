@@ -55,4 +55,13 @@ class Tasklist extends AbstractObject {
         return $this->client->get("tasklists/$this->id/time/total")->response();
     }
 
+    /**
+     * Create task in tasklist
+     * POST /tasklists/{id}/tasks.json
+     *
+     */
+    public function createTask($args) 
+    {
+        return $this->client->post("$this->endpoint/$this->id/tasks", ['todo-item' => $args])->response();
+    }
 }
