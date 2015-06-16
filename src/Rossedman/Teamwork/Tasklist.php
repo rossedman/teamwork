@@ -59,6 +59,7 @@ class Tasklist extends AbstractObject {
      * Create task in tasklist
      * POST /tasklists/{id}/tasks.json
      *
+     * @return mixed
      */
     public function createTask($args) 
     {
