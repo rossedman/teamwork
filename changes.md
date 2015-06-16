@@ -1,10 +1,7 @@
-## Completed
+## v1.0.1
+* Update docs
+* Create documtentation website
+* Add createTasklist and createMilestone methods
 
-- Account
-- Activity
-- Company
-- People
-- Messages (Excluding Categories)
-- Project
-- Milestones
-- Links
+## v1.0.0
+* Initial Release
