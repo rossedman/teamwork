@@ -151,6 +151,18 @@ class Project extends AbstractObject {
     }
 
     /**
+     * Create tasklist associated with this project
+     * POST /projects/{project_id}/tasklists.json
+     *
+     * @param $args
+     *
+     * @return mixed
+     */
+    public function createTasklist($args) {
+        return $this->client->post("$this->endpoint/$this->id/tasklists", ['todo-list' => $args])->response();
+    }
+
+    /**
      * Tasklists
      * GET /projects/{project_id}/tasklists.json
      *
