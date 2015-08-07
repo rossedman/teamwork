@@ -11,7 +11,7 @@ class Time extends AbstractObject {
     protected $endpoint = 'time_entries';
 
     /**
-     * GET /time.json
+     * GET /time_entries.json
      *
      * @return mixed
      */
