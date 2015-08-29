@@ -59,11 +59,15 @@ class Tasklist extends AbstractObject {
      * Tasks
      * GET /tasklists/{id}/tasks.json
      *
+     * @param null $args
+     *
      * @return mixed
      */
-    public function tasks()
+    public function tasks($args = null)
     {
-        return $this->client->get("$this->endpoint/$this->id/tasks")->response();
+        $this->areArgumentsValid($args, ['filter', 'page', 'pageSize', 'startdate', 'enddate', 'updatedAfterDate', 'completedAfterDate', 'completedBeforeDate', 'showDeleted', 'includeCompletedTasks', 'includeCompletedSubtasks', 'creator-ids', 'include', 'responsible-party-ids', 'sort', 'getSubTasks', 'nestSubTasks', 'getFiles', 'dataSet', 'includeToday', 'ignore-start-date']);
+    
+        return $this->client->get("$this->endpoint/$this->id/tasks", $args)->response();
     }
 
 }
