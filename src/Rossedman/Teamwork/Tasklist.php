@@ -52,7 +52,18 @@ class Tasklist extends AbstractObject {
      */
     public function timeTotal()
     {
-        return $this->client->get("tasklists/$this->id/time/total")->response();
+        return $this->client->get("$this->endpoint/$this->id/time/total")->response();
+    }
+
+    /**
+     * Tasks
+     * GET /tasklists/{id}/tasks.json
+     *
+     * @return mixed
+     */
+    public function tasks()
+    {
+        return $this->client->get("$this->endpoint/$this->id/tasks")->response();
     }
 
 }
