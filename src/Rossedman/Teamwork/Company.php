@@ -22,4 +22,17 @@ class Company extends AbstractObject {
     {
         return $this->client->get("$this->endpoint/$this->id/people")->response();
     }
+    
+    /**
+     * Get Projects Associated With Company
+     * GET /companies/{company_id}/projects.json
+     *
+     * @link http://developer.teamwork.com/projectsapi#retrieve_projects
+     *
+     * @return mixed
+     */
+    public function projects()
+    {
+        return $this->client->get("$this->endpoint/$this->id/projects")->response();
+    }    
 }
