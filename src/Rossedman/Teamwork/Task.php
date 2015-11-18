@@ -58,4 +58,15 @@ class Task extends AbstractObject {
     {
         return $this->client->get("$this->endpoint/$this->id/time/total")->response();
     }
+    
+    /**
+     * Edit A Task
+     * PUT tasks/{id}.json
+     *
+     * @return mixed
+     */
+    public function edit($args)
+    {
+        return $this->client->put("$this->endpoint/$this->id.json", ['todo-item' => $args])->response();
+    }
 }
