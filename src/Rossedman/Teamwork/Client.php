@@ -174,7 +174,7 @@ class Client implements RequestableInterface {
     {
         if (filter_var($endpoint, FILTER_VALIDATE_URL))
         {
-            return $this->url . '.' . $this->dataFormat;
+            return $endpoint . '.' . $this->dataFormat;
         }
 
         if (substr($this->url, -1) != '/')
