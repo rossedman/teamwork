@@ -172,6 +172,11 @@ class Client implements RequestableInterface {
      */
     public function buildUrl($endpoint)
     {
+        if (filter_var($endpoint, FILTER_VALIDATE_URL))
+        {
+            return $this->url . '.' . $this->dataFormat;
+        }
+
         if (substr($this->url, -1) != '/')
         {
             $this->url = $this->url . '/';
