@@ -55,4 +55,14 @@ class Tasklist extends AbstractObject {
         return $this->client->get("tasklists/$this->id/time/total")->response();
     }
 
+    /**
+     * Create Task
+     * GET /tasklists/{id}/tasks.json
+     *
+     * @return mixed
+     */
+    public function createTask($data)
+    {
+        return $this->client->post("tasklists/$this->id/tasks", ['todo-item' => $data])->response();
+    }
 }
