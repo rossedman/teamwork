@@ -113,7 +113,7 @@ $teamwork->project($projectID)->activity();
 
 #### 1.1 Release
 
-- [ ] Add Support For `Comments`
+- [X] Add Support For `Comments`
 - [ ] Add Support For `Permissions`
 - [ ] Add Support For `Time` Endpoint
 
