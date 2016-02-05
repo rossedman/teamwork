@@ -160,20 +160,6 @@ class Client implements RequestableInterface {
     }
 
     /**
-     * Raw Response
-     *
-     * this send the request from the built response and
-     * returns the response as it comes
-     * Useful if you want to grab any of the headers
-     */
-    public function rawResponse()
-    {
-        $this->response = $this->client->send($this->request);
-
-        return $this->response;
-    }
-
-    /**
      * Build Url
      *
      * builds the url to make the request to Teamwork with
