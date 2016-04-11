@@ -179,7 +179,7 @@ class Project extends AbstractObject {
      *
      * @return [type] [description]
      */
-    public function emailaddress($args = null)
+    public function emailAddress($args = null)
     {
         return $this->client->get("$this->endpoint/$this->id/emailaddress", $args)->response();
     }
