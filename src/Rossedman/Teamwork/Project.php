@@ -65,7 +65,7 @@ class Project extends AbstractObject {
      */
     public function star()
     {
-        return $this->client->put("$this->endpoint/$this->id/star")->response();
+        return $this->client->put("$this->endpoint/$this->id/star", [])->response();
     }
 
     /**
@@ -76,7 +76,7 @@ class Project extends AbstractObject {
      */
     public function unstar()
     {
-        return $this->client->put("$this->endpoint/$this->id/unstar")->response();
+        return $this->client->put("$this->endpoint/$this->id/unstar", [])->response();
     }
 
     /**
@@ -137,5 +137,52 @@ class Project extends AbstractObject {
 
         return $this->client->get("$this->endpoint/$this->id/milestones", $args)->response();
     }
+
+    /**
+     * Create milestone associated with this project
+     * POST /projects/{project_id}/milestones.json
+     *
+     * @param $args
+     *
+     * @return mixed
+     */
+    public function createMilestone($args) {
+        return $this->client->post("$this->endpoint/$this->id/milestones", ['milestone' => $args])->response();
+    }
+
+    /**
+     * Create tasklist associated with this project
+     * POST /projects/{project_id}/tasklists.json
+     *
+     * @param $args
+     *
+     * @return mixed
+     */
+    public function createTasklist($args) {
+        return $this->client->post("$this->endpoint/$this->id/tasklists", ['todo-list' => $args])->response();
+    }
+
+    /**
+     * Tasklists
+     * GET /projects/{project_id}/tasklists.json
+     *
+     * @return [type] [description]
+     */
+    public function tasklists($args = null)
+    {
+        return $this->client->get("$this->endpoint/$this->id/tasklists", $args)->response();
+    }
+
+    /**
+     * Emailaddresses
+     * GET /projects/{project_id}/emailaddress.json
+     *
+     * @return [type] [description]
+     */
+    public function emailAddress($args = null)
+    {
+        return $this->client->get("$this->endpoint/$this->id/emailaddress", $args)->response();
+    }
+
 
 }

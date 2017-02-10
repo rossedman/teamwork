@@ -59,4 +59,18 @@ class ClientTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals('http://teamwork.com/test.json', $url);
     }
+
+    /**
+     * @group client
+     */
+    public function test_build_url_with_full_url()
+    {
+        $url = 'http://teamwork.com/authenticate/test/url';
+        $expectedUrl = $url . '.json';
+        $client = new Client($this->guzzle, 'key', 'http://teamwork.com');
+
+        $actualUrl = $client->buildUrl($url);
+
+        $this->assertEquals($expectedUrl, $actualUrl);
+    }
 }

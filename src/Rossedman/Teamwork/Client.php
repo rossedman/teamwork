@@ -1,9 +1,10 @@
-<?php  namespace Rossedman\Teamwork;
+<?php namespace Rossedman\Teamwork;
 
 use GuzzleHttp\Client as Guzzle;
 use Rossedman\Teamwork\Contracts\RequestableInterface;
 
-class Client implements RequestableInterface {
+class Client implements RequestableInterface
+{
 
     /**
      * @var GuzzleHttp\Client
@@ -56,8 +57,8 @@ class Client implements RequestableInterface {
     public function __construct(Guzzle $client, $key, $url)
     {
         $this->client = $client;
-        $this->key = $key;
-        $this->url = $url;
+        $this->key    = $key;
+        $this->url    = $url;
     }
 
     /**
@@ -129,17 +130,21 @@ class Client implements RequestableInterface {
      */
     public function buildRequest($endpoint, $action, $params = [], $query = null)
     {
-        if (count($params) > 0)
-        {
+        if (count($params) > 0) {
             $params = json_encode($params);
         }
 
-        $this->request = $this->client->createRequest($action,
-            $this->buildUrl($endpoint), ['auth' => [$this->key, 'X'], 'body' => $params]
+        $options = ['auth' => [$this->key, 'X']];
+
+        if ($action == 'POST') {
+            $options = array_merge(['body' => $params], $options);
+        }
+
+        $this->request = $this->client->request($action,
+            $this->buildUrl($endpoint), $options
         );
 
-        if ($query != null)
-        {
+        if ($query != null) {
             $this->buildQuery($query);
         }
 
@@ -154,9 +159,10 @@ class Client implements RequestableInterface {
      */
     public function response()
     {
-        $this->response = $this->client->send($this->request);
+        $this->response = $this->request->getBody();
 
-        return $this->response->json();
+
+        return $this->response->getContents();
     }
 
     /**
@@ -172,8 +178,11 @@ class Client implements RequestableInterface {
      */
     public function buildUrl($endpoint)
     {
-        if (substr($this->url, -1) != '/')
-        {
+        if (filter_var($endpoint, FILTER_VALIDATE_URL)) {
+            return $endpoint . '.' . $this->dataFormat;
+        }
+
+        if (substr($this->url, -1) != '/') {
             $this->url = $this->url . '/';
         }
 
@@ -193,8 +202,7 @@ class Client implements RequestableInterface {
     {
         $q = $this->request->getQuery();
 
-        foreach ($query as $key => $value)
-        {
+        foreach ($query as $key => $value) {
             $q[$key] = $value;
         }
     }
