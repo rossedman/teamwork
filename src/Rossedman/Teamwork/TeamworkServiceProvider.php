@@ -12,7 +12,7 @@ class TeamworkServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['rossedman.teamwork'] = $this->app->share(function($app)
+        $this->app->singleton('rossedman.teamwork', function($app)
         {
             $client = new \Rossedman\Teamwork\Client(new Guzzle,
                 $app['config']->get('services.teamwork.key'),
