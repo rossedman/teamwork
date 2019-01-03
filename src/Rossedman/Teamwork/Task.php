@@ -67,6 +67,6 @@ class Task extends AbstractObject {
      */
     public function edit($args)
     {
-        return $this->client->put("$this->endpoint/$this->id.json", ['todo-item' => $args])->response();
+        return $this->client->put("$this->endpoint/$this->id", ['todo-item' => $args])->response();
     }
 }
